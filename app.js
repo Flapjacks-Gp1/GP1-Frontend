@@ -10,4 +10,26 @@ app.get('/', function (req, res) {
     res.render('home');
 });
 
-app.listen(4000);
+app.get('/signup', function (req, res) {
+    res.render('signup');
+});
+
+app.post('/signup', function (req, res) {
+
+});
+
+app.get('/login', function (req, res) {
+    res.render('login');
+});
+
+app.get('/events', function (req, res) {
+    res.render('events/index');
+});
+
+app.get('/events/create', function (req, res) {
+    res.render('events/create');
+});
+
+app.use(express.static('public'));
+
+app.listen(8080);

@@ -4,6 +4,7 @@
   "description": "Frontend node app for jiolocation app",
   "main": "app.js",
   "scripts": {
+    "start": "nodemon app",
     "test": "jasmine-node spec"
   },
   "repository": {
