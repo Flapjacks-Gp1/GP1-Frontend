@@ -1,0 +1,25 @@
+{
+  "name": "jiolocation-frontend",
+  "version": "1.0.0",
+  "description": "Frontend node app for jiolocation app",
+  "main": "app.js",
+  "scripts": {
+    "test": "jasmine-node spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flapjacks-Gp1/GP1-Frontend.git"
+  },
+  "author": "Flapjacks",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Flapjacks-Gp1/GP1-Frontend/issues"
+  },
+  "homepage": "https://github.com/Flapjacks-Gp1/GP1-Frontend#readme",
+  "devDependencies": {
+    "grunt-contrib-handlebars": "^1.0.0"
+  },
+  "dependencies": {
+    "handlebars": "^4.0.5"
+  }
+}
