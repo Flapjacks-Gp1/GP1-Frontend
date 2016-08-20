@@ -11,7 +11,8 @@ $(document).ready(function() {
       navbar: content.filter("#navbar-partial").html(),
       footer: content.filter("#footer-partial").html(),
       home: content.filter("#home-partial").html(),
-      signup: content.filter("#signup-partial").html()
+      signup: content.filter("#signup-partial").html(),
+      login: content.filter("#login-partial").html()
     });
 
     //Your data
