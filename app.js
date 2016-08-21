@@ -9,7 +9,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //routing
 
 app.get("/", function(req, res){
-  res.send("this is the home page");
+  res.render("homepage");
 });
 
 
