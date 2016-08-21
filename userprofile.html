@@ -1,164 +1,193 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/bulma.css" type="text/css">
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <title>Home</title>
-  </head>
-  <body>
-<nav class="level">
-  <div class = "container">
+<script id="createevent-partial" type = "text/x-handlebars-template">
+  <main>
+  <nav class="level">
+    <div class="level-item">
 
-    <div class="columns">
-      <div class="column is-6">
-      <div class="box">
-      <article class="media">
-        <div class="media-left">
-          <figure class="image is-64x64">
-            <img src="http://placehold.it/128x128" alt="Image">
-          </figure>
-        </div>
-        <div class="media-content">
-          <div class="content">
-            <p>
-              <strong>John Smith</strong>
-              <br>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
-            </p>
+      <div class="level-item has-text-centered">
+        <div class="columns">
+          <div class="column is-6">
+            <div class="box">
+              <article class="media">
+                <div class="media-left">
+                  <figure class="image is-64x64">
+                    <img src="http://placehold.it/128x128" alt="Image">
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="content">
+                    <p>
+                      <strong>John Smith</strong>
+                      <br> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean efficitur sit amet massa fringilla egestas. Nullam condimentum luctus turpis.
+                    </p>
+                  </div>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
-      </article>
+      </div>
     </div>
-  </div>
-  </div>
 
-  <div class="columns">
-    <div class="column is-3">
-  <div class="box">
-    <article class="media">
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>40</strong>
-            <br>
-            Events<br>Created
-          </p>
+
+    <div class="level-item">
+      <div class="columns">
+        <div class="column is-4">
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>40</strong>
+                    <br> Events
+                    <br>Created
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
-    </article>
-  </div>
-</div>
-</div>
-
-<div class="columns">
-  <div class="column is-3">
-  <div class="box">
-    <article class="media">
-      <div class="media-content">
-        <div class="content">
-          <p>
-            <strong>40</strong>
-            <br>
-            Events<br>Joined
-          </p>
+    </div>
+    <div class="level-item">
+      <div class="columns">
+        <div class="column is-4">
+          <div class="box">
+            <article class="media">
+              <div class="media-content">
+                <div class="content">
+                  <p>
+                    <strong>40</strong>
+                    <br> Events
+                    <br>Joined
+                  </p>
+                </div>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
-    </article>
-  </div>
-</div>
+    </div>
 
+    <div class="level-item">
+      <a class="button is-medium">Edit Profile</a>
+    </div>
 
-    <a class="button is-medium">Edit Profile</a>
+  </nav>
 
-</div>
-</nav>
+  <div>Your Events</div>
 
-<div>Your Events</div>
+  <nav class="level">
 
-<div class="columns">
-  <div class="column is-3">
-    <div class = "container2">
+    <div class="level-item">
+      <div class="columns">
+        <div class="column is-3">
 
-      <div class="card">
-        <div class="card-content">
-          <div class="media">
-      <div class="media-content">
-        <p class="title is-5">Event Name</p>
-      </div>
-      <figure class="image is-128x128">
-        <img src="http://placehold.it/128x128">
-      </figure>
-      </div>
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">Event Name</p>
+                </div>
+                <figure class="image is-128x128">
+                  <img src="http://placehold.it/128x128">
+                </figure>
+              </div>
 
-      <div class="content">
-      <p>Event Location: </p><p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris.</p>
-      </div>
-      <a class="button is-medium">Join Event</a>
-  </div>
+              <div class="content">
+                <p>Event Location: </p>
+                <p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
+              </div>
+              <a class="button is-medium">Join Event</a>
 
-    <div class="card">
-    <div class="card-content">
-      <div class="media">
-        <div class="media-content">
-          <p class="title is-5">Event Name</p>
+            </div>
+          </div>
         </div>
-        <figure class="image is-128x128">
-          <img src="http://placehold.it/128x128">
-        </figure>
-    </div>
-
-    <div class="content">
-      <p>Event Location: </p><p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        Phasellus nec iaculis mauris.</p>
       </div>
-      <a class="button is-medium">Join Event</a>
     </div>
 
-    <div class="card">
-      <div class="card-content">
-        <div class="media">
-    <div class="media-content">
-      <p class="title is-5">Event Name</p>
-    </div>
-    <figure class="image is-128x128">
-      <img src="http://placehold.it/128x128">
-    </figure>
+    <div class="level-item">
+      <div class="columns">
+        <div class="column is-3">
+
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">Event Name</p>
+                </div>
+                <figure class="image is-128x128">
+                  <img src="http://placehold.it/128x128">
+                </figure>
+              </div>
+
+              <div class="content">
+                <p>Event Location: </p>
+                <p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
+              </div>
+              <a class="button is-medium">Join Event</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <div class="content">
-    <p>Event Location: </p><p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Phasellus nec iaculis mauris.</p>
+    <div class="level-item">
+      <div class="columns">
+        <div class="column is-3">
+
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">Event Name</p>
+                </div>
+                <figure class="image is-128x128">
+                  <img src="http://placehold.it/128x128">
+                </figure>
+              </div>
+
+              <div class="content">
+                <p>Event Location: </p>
+                <p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
+              </div>
+              <a class="button is-medium">Join Event</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <a class="button is-medium">Join Event</a>
+
+    <div class="level-item">
+      <div class="columns">
+        <div class="column is-3">
+
+          <div class="card">
+            <div class="card-content">
+              <div class="media">
+                <div class="media-content">
+                  <p class="title is-5">Event Name</p>
+                </div>
+                <figure class="image is-128x128">
+                  <img src="http://placehold.it/128x128">
+                </figure>
+              </div>
+
+              <div class="content">
+                <p>Event Location: </p>
+                <p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
+              </div>
+              <a class="button is-medium">Join Event</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
 
-    <div class="card">
-      <div class="card-content">
-        <div class="media">
-    <div class="media-content">
-      <p class="title is-5">Event Name</p>
-    </div>
-    <figure class="image is-128x128">
-      <img src="http://placehold.it/128x128">
-    </figure>
-    </div>
-
-    <div class="content">
-    <p>Event Location: </p><p id="desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Phasellus nec iaculis mauris.</p>
-    </div>
-    <a class="button is-medium">Join Event</a>
-    </div>
-
-</div>
-</div>
-</div>
-
-
-  <script type="text/javascript" src="assets/js/app.js"></script>
-  </body>
-</html>
+  </nav>
+</main>
+</script>
