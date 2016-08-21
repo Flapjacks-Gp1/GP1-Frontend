@@ -1,3 +1,28 @@
+$(document).ready(function(){
+  $.ajaxSetup({
+    cache: true
+  });
+
+$('#signup').click(function(e){
+  e.preventDefault();
+
+  $.ajax({
+    url: 'http:/localhost:5000/api/signup',
+    type: 'POST',
+    data: JSON
+  }).done(signupSuccess)
+    .fail(failResponse);
+});
+
+
+});
+
+
+
+
+
+
+
 
 (function($) {
 
