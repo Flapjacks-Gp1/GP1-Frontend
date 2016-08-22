@@ -3,6 +3,7 @@ var app = express();
 var ejs = require("ejs");
 var bodyParser  = require("body-parser");
 var expressLayouts = require("express-ejs-layouts");
+var request = require('request');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -31,11 +32,6 @@ app.get("/signup", function(req, res){
   console.log(req.body);
 });
 
-app.post("/signup", function(req, res, next) {
-  console.log(req.body);
-  next();
-} );
-
 app.get("/profile", function(req, res){
   res.render("users/userprofile");
 });
@@ -51,12 +47,6 @@ app.get("/events-create", function(req, res){
 app.get("/events-edit", function(req, res){
   res.render("events/createevent");
 });
-
-
-
-
-
-
 
 
 
