@@ -3,7 +3,11 @@ var app = express();
 var ejs = require("ejs");
 var bodyParser  = require("body-parser");
 var expressLayouts = require("express-ejs-layouts");
+<<<<<<< HEAD
 var request = require('request');
+=======
+var request = require("request");
+>>>>>>> 3fd30d756ae5d02480d269f8db36ef667c4920ff
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -13,6 +17,9 @@ app.use(expressLayouts);
 
 
 app.use(express.static('./public'));
+
+
+
 
 //routing
 
@@ -32,12 +39,41 @@ app.get("/signup", function(req, res){
   console.log(req.body);
 });
 
+<<<<<<< HEAD
 app.get("/profile", function(req, res){
   res.render("users/userprofile");
+=======
+app.post("/signup", function(req, res){
+  res.render('users/signup');
+  console.log(req.body);
+});
+
+app.get("/profile/:user_id", function(req, res){
+
+res.render("users/userprofile");
+
+});
+
+app.get("/useredit/:user_id", function(req, res){
+  res.render("users/editprofile");
+>>>>>>> 3fd30d756ae5d02480d269f8db36ef667c4920ff
 });
 
 app.get("/events", function(req, res){
-  res.render("events/findanevent");
+  var url = "http://localhost:9000/api/events";
+  request(url, function(error, response, body){
+    if(!error && response.statusCode == 200){
+      var data = JSON.parse(body);
+      res.render("events/findanevent", {data: data});
+    }
+  } );
+  // var data = [{
+  //   name: "testName",
+  //   location: "testLocation",
+  //   description: "testDesc"
+  // }]
+// res.render("events/findanevent", {data: data});
+
 });
 
 app.get("/events-create", function(req, res){
