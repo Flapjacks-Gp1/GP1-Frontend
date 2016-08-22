@@ -11,6 +11,7 @@ $(document).ready(function () {
         cache: true
       });
 
+  //Signup Form
   $signupForm.submit(function(event) {
     event.preventDefault();
     $.ajax({
@@ -39,6 +40,7 @@ $(document).ready(function () {
     }
   });
 
+  //Login form
   $loginForm.submit(function(event) {
     event.preventDefault();
     $.ajax({

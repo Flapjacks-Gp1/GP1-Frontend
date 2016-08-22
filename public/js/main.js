@@ -1,23 +1,7 @@
 
 $(document).ready(function () {
 
-<<<<<<< HEAD
-
   var server_url = 'http://localhost:9000/api';
-=======
-  var $name = $("#name1");
-  var $name2 = $("#name2");
-  var $location = $("#location1");
-  var $location2 = $("#location2");
-  var $desc = $("#desc1");
-  var $desc2 = $("#desc2");
-  var $username = $("#username");
-  var $password = $("#password");
-  var $loginBtn = $("#loginBtn");
-
-  var server_url = 'http://localhost:9000/api/events';
-  var login_url = 'http://localhost:9000/api/login';
->>>>>>> 3fd30d756ae5d02480d269f8db36ef667c4920ff
 
 $loginBtn.click(function(){
   //Show all Events
