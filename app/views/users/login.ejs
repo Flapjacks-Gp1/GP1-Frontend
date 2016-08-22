@@ -1,14 +1,15 @@
-<form class="" action="index.html" method="post">
-  <label class="label">Username</label>
+<% include ../shared/messages %>
+
+<form id="login" method="post">
+  <label class="label">Email</label>
   <p class="control has-icon has-icon-right">
-    <input class="input is-success" type="text" placeholder="Text input" value="Please enter your username">
+    <input class="input is-success" type="text" placeholder="Email" name="email">
   </p>
   <label class="label">Password</label>
   <p class="control has-icon has-icon-right">
-    <input class="input is-danger" type="text" placeholder="Email input" value="Please enter your password">
+    <input class="input is-danger" type="password" placeholder="Password" name="password">
   </p>
   <p class="control">
-    <button class="button is-primary">Login</button>
+    <input type="submit" class="button is-primary" name="submit" value="Submit">
   </p>
 </form>
-<script type= "text/javascript" src="js/login.js"></script>

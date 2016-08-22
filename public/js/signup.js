@@ -1,28 +1,68 @@
 
 $(document).ready(function () {
-  var server_url = 'http://localhost:9000/api/signup';
-  var $form = $('#signup');
+  var server_url = 'http://localhost:9000/api/';
+  var $signupForm = $('#signup');
+  var $loginForm = $('#login');
+  var $body = $('body');
+  var $notification = $('#message');
+  var $notificationMessage = $('#message span');
 
-  $form.submit(function(event) {
+  $.ajaxSetup({
+        cache: true
+      });
+
+  $signupForm.submit(function(event) {
     event.preventDefault();
     $.ajax({
-      url: server_url,
+      url: server_url + 'signup',
       method: "POST",
       dataType: 'json',
-      data: $form.serialize(),
+      data: $signupForm.serialize(),
     }).done(successFunction)
       .fail(failFunction)
       .always(alwaysFunction);
 
-
     function successFunction(data) {
-      window.location.replace("/");
+      $signupForm.hide();
+      $notification.show();
+      $notificationMessage.html("Success!");
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('id', data.id);
+      console.log(data);
     }
 
     function failFunction(request, textStatus, errorThrown){
       console.log('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
     }
-    
+
+    function alwaysFunction() {
+    }
+  });
+
+  $loginForm.submit(function(event) {
+    event.preventDefault();
+    $.ajax({
+      url: server_url + 'login',
+      method: "POST",
+      dataType: 'json',
+      data: $loginForm.serialize(),
+    }).done(successFunction)
+      .fail(failFunction)
+      .always(alwaysFunction);
+
+    function successFunction(data) {
+      $signupForm.hide();
+      $notification.show();
+      $notificationMessage.html('Welcome ' + data.name);
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('id', data.id);
+      console.log(data);
+    }
+
+    function failFunction(request, textStatus, errorThrown){
+      console.log('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
+    }
+
     function alwaysFunction() {
     }
   });
