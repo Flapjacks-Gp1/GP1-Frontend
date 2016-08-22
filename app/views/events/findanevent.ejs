@@ -1,64 +1,66 @@
 
+<div>Find an Event</div>
+<nav class="level">
+
+  <div class="level-item">
+    <div class="columns">
+      <div class="column is-3">
 
 
-  <div>Find an Event</div>
-  <nav class="level">
+        <div class="card">
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <p id = "name1" class="title is-5">
 
-    <div class="level-item">
-      <div class="columns">
-        <div class="column is-3">
+              </p>
+            </div>
+            <figure class="image is-128x128">
+              <img src="http://placehold.it/128x128">
+            </figure>
+          </div>
+            <div class="content">
+              <p id="location1">
 
-        <% for(var i =0; i < data.length; i ++) { %>  <div class="card">
+              </p>
+              <p id="desc1">
+
+              </p>
+            </div>
+            <a class="button is-medium">Join Event</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="level-item">
+    <div class="columns">
+      <div class="column is-3">
+
+        <div class="card">
           <div class="card-content">
             <div class="media">
               <div class="media-content">
-                <p id = "name1" class="title is-5"><%= data[i].name %> </p>
+                <p id = "name2" class="title is-5">Event Name</p>
               </div>
               <figure class="image is-128x128">
                 <img src="http://placehold.it/128x128">
               </figure>
             </div>
 
-
-              <div class="content">
-                <p id="location1"><%= data[i].location %></p>
-                <p id="desc1"><%= data[i].description %></p>
-              </div>
-              <a class="button is-medium">Join Event</a>
-
+            <div class="content">
+              <p id="location2">Event Location: </p>
+              <p id="desc2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
             </div>
+            <a class="button is-medium">Join Event</a>
+
           </div>
         </div>
       </div>
     </div>
-    <% } %>
-
-    <div class="level-item">
-      <div class="columns">
-        <div class="column is-3">
-
-          <div class="card">
-            <div class="card-content">
-              <div class="media">
-                <div class="media-content">
-                  <p id = "name2" class="title is-5">Event Name</p>
-                </div>
-                <figure class="image is-128x128">
-                  <img src="http://placehold.it/128x128">
-                </figure>
-              </div>
-
-              <div class="content">
-                <p id="location2">Event Location: </p>
-                <p id="desc2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris.</p>
-              </div>
-              <a class="button is-medium">Join Event</a>
-
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  </div>
 
     <!-- <div class="level-item">
       <div class="columns">

@@ -23,8 +23,17 @@ app.get("/login", function(req, res){
   res.render('users/login');
 });
 
+app.post("/login", function(req, res){
+});
+
 app.get("/signup", function(req, res){
   res.render('users/signup');
+  console.log(req.body);
+});
+
+app.post("/signup", function(req, res){
+  res.render('users/signup');
+  console.log(req.body);
 });
 
 app.get("/profile", function(req, res){

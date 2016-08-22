@@ -34,7 +34,6 @@ $(document).ready(function () {
       headers: {
              "Authorization": "Bearer " + localStorage.getItem('jwt_token')
            },
-      // data: { name: "Jonathan", email: "anna@gmail.com", password: "password123" },
       dataType: 'json',
 
       // beforeSend: function() {
@@ -44,24 +43,14 @@ $(document).ready(function () {
       .fail(failFunction)
       .always(alwaysFunction);
 
-//Edit Events
-          $.ajax({
-            url: server_url,
-            method: "PUT",
-            headers: {
-                   "Authorization": "Bearer " + localStorage.getItem('jwt_token')
-                 },
-            // data: { name: "Jonathan", email: "anna@gmail.com", password: "password123" },
-            dataType: 'json',
-
-            // beforeSend: function() {
-            //   $loader.show();
-            // }
-          }).done(successFunction)
-            .fail(failFunction)
-            .always(alwaysFunction);
 
     function successFunction(data) {
+      // var rendered = new EJS({url:'events/findanevent.ejs'}).render({data:data});
+      // $(".title is-5").forEach(function(i, name){
+      //   name.html(data[i].name);
+      // });
+
+      // $('.contact').html(renderedData);
     // $.css('border', '1px solid #e8e8e8');
     // if data exists
     // for(var i = 0; i < data.length; i ++){
@@ -69,12 +58,12 @@ $(document).ready(function () {
     // $location.html(data[i].location);
     // $desc.html(data[i].description);
     // console.log(data[i].name);
-    var html = new EJS({url: "findevent.ejs"}).render(data);
-  }
-    // $eventname.text(data.name);
-    // $description.text(data.email);
-    // $location.text(data.hobbies);
-  }
+    // var html = new EJS({url: 'findanevent.ejs'}).render(data);
+}
+
+
+
+
 
   function failFunction(request, textStatus, errorThrown){
     // $name.text('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
