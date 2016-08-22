@@ -1,13 +1,13 @@
 
 $(document).ready(function () {
 
-var user_url = 'http://localhost:9000/api/events/';
+var event_url = 'http://localhost:9000/api/events/';
 
 localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3Yjk1NmEyNzA1OGYwNTExOGU1ODdlYyIsImVtYWlsIjoiam9uYXRoYW5AZ21haWwuY29tIiwiaWF0IjoxNDcxODQ2NzMyLCJleHAiOjE0NzE4NTc1MzJ9._x0UPjHICYKAhJCvHJCewPniF4Wvl2Z8VlYb5muFZus");
 
 
 $.ajax({
-  url: user_url + localStorage.getItem('event_id'),
+  url: event_url ,
   method: "GET",
   headers: {
          "Authorization": "Bearer " + localStorage.getItem('token')

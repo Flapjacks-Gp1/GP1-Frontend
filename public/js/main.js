@@ -10,7 +10,6 @@ localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3
 $('#createform').on('submit',function(e){
   console.log(localStorage.getItem('token'));
 
-  console.log('hi');
   e.preventDefault();
     $.ajax({
       url: server_url,
@@ -24,8 +23,8 @@ $('#createform').on('submit',function(e){
       // beforeSend: function() {
       //   $loader.show();
       // }
-    }).done(function successFunction(data) {
-       console.log('success signup');
+    }).done(function successFunction(data, res) {
+       console.log(res);
         window.location.replace("/events");
       })
       .fail(failFunction)

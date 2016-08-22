@@ -62,14 +62,19 @@ app.post("/events-create", function(req, res){
       res.redirect("/events");
 });
 
-
-
 app.get("/events-edit", function(req, res){
   res.render("events/editevent");
 });
 
-app.get("/event-show", function(req, res){
-  res.render("events/viewevent");
+app.get("/events/:id", function(req, res){
+  var url = "http://localhost:9000/api/events/" + req.params.id;
+  request(url, function(error, response, body){
+    if(!error && response.statusCode == 200){
+      var data = JSON.parse(body);
+      res.render("events/viewevent", {data: data});
+    }
+  } );
+
 })
 
 app.put("/events-edit", function(req, res){

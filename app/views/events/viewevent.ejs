@@ -15,7 +15,7 @@
               <div class="media-content">
                 <div class="content">
                   <p>
-                    <strong id="name5">John Smith</strong>
+                    <strong><%= data.name %></strong>
                     <br>
                   </p>
                 </div>
@@ -36,9 +36,10 @@
             <div class="media-content">
               <div class="content">
                 <p>
-
-                  <br> Events
-                  <br>Created
+                  <%= data.location %>
+                </p>
+                <p>
+                  <%= data.description %>
                 </p>
                 <div class="event"></div>
               </div>
