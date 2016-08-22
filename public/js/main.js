@@ -37,7 +37,7 @@ $loginBtn.click(function(){
 
 
 
-localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3YmE2YjU5MDE1NDAxZTU1ZDZmZDViZSIsImVtYWlsIjoiam9uQGdtYWlsLmNvbSIsImlhdCI6MTQ3MTgzNDk3NywiZXhwIjoxNDcxODQ1Nzc3fQ.MjkpZPAlKr71EE7qzkpjqwY1CT7ieAXdIXgB-5x3fkc");
+localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3YmE2YjU5MDE1NDAxZTU1ZDZmZDViZSIsImVtYWlsIjoiam9uQGdtYWlsLmNvbSIsImlhdCI6MTQ3MTg0MzYwNiwiZXhwIjoxNDcxODU0NDA2fQ.AEf0XPbC-Iyg5EnKkzgRNQHghYTyZWIHiJvY2dSGcJM");
 localStorage.setItem('user_id', "57ba6b59015401e55d6fd5be");
 
 //Create New Events
@@ -62,6 +62,16 @@ localStorage.setItem('user_id', "57ba6b59015401e55d6fd5be");
       console.log(data);
       console.log(data.name);
       $("#name").html(data.name);
+
+      for (i=0; i < data.events.length; i++){
+        var event_div = $('<div>')
+        event_div.append(data.events[i].name);
+        event_div.append('<li>' + data.events[i].description + '</li>');
+        event_div.append('<li>' + data.events[i].location + '</li>');
+        event_div.append('<hr />')
+        $(".event").append(event_div);
+      }
+
 
       // var rendered = new EJS({url:'events/findanevent.ejs'}).render({data:data});
       // $(".title is-5").forEach(function(i, name){
