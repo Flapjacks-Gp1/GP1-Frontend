@@ -3,7 +3,7 @@ var app = express();
 var ejs = require("ejs");
 var bodyParser  = require("body-parser");
 var expressLayouts = require("express-ejs-layouts");
-var request = require("request");
+var request = require('request');
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -13,10 +13,6 @@ app.use(expressLayouts);
 
 
 app.use(express.static('./public'));
-
-
-
-
 //routing
 
 app.get("/", function(req, res){
@@ -34,14 +30,19 @@ app.get("/signup", function(req, res){
   res.render('users/signup');
   console.log(req.body);
 });
-
 app.post("/signup", function(req, res){
   res.render('users/signup');
   console.log(req.body);
 });
 
-app.get("/profile", function(req, res){
-  res.render("users/userprofile");
+app.get("/profile/:user_id", function(req, res){
+
+res.render("users/userprofile");
+
+});
+
+app.get("/useredit/:user_id", function(req, res){
+  res.render("users/editprofile");
 });
 
 app.get("/events", function(req, res){
@@ -76,13 +77,6 @@ app.get("/events/:id", function(req, res){
   } );
 
 })
-
-app.put("/events-edit", function(req, res){
-      res.redirect("events/findanevent");
-});
-
-
-
 
 //Server
 app.set('port', (process.env.PORT || 7000));

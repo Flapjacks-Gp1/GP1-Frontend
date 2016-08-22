@@ -14,35 +14,12 @@
 <p class="control">
   <textarea id= "description" class="textarea" placeholder="Please describe the event" name="description"></textarea>
 </p>
+<input id="eventCreator" type="hidden" name="user">
 <p class="control">
   <button class="button is-primary">Location</button>
-  <button class="button is-link">Submit</button>
+  <input type="submit" name="submit" value="Submit">
 </p>
 </form>
 
-
-
-
-
-<!-- <div class = "container">
-  <div = "row">
-<h1 style="text-align: center;">Create an Event</h1>
-<div style="width: 70%; margin: 25px auto;">
-<form action="/events-create" method="POST">
-  <div class="form-group">
-      <input class="form-control" type="text" name= "name" placeholder="name">
-  </div>
-  <div class="form-group">
-  <input class="form-control" type="text" name= "Location" placeholder="Location">
-</div>
-<div class="form-group">
-<input class="form-control" type="text" name= "Description" placeholder="Description">
-</div>
-<div class="form-group">
-  <button class = "btn btn-lg btn-primary btn-block">Submit!</button>
-  </div>
-</form>
-</div>
-
-</div>
-</div> -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="createevent.js" charset="utf-8"></script>
