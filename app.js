@@ -3,6 +3,7 @@ var app = express();
 var ejs = require("ejs");
 var bodyParser  = require("body-parser");
 var expressLayouts = require("express-ejs-layouts");
+var request = require("request");
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -12,6 +13,9 @@ app.use(expressLayouts);
 
 
 app.use(express.static('./public'));
+
+
+
 
 //routing
 
@@ -41,7 +45,20 @@ app.get("/profile", function(req, res){
 });
 
 app.get("/events", function(req, res){
-  res.render("events/findanevent");
+  var url = "http://localhost:9000/api/events";
+  request(url, function(error, response, body){
+    if(!error && response.statusCode == 200){
+      var data = JSON.parse(body);
+      res.render("events/findanevent", {data: data});
+    }
+  } );
+  // var data = [{
+  //   name: "testName",
+  //   location: "testLocation",
+  //   description: "testDesc"
+  // }]
+// res.render("events/findanevent", {data: data});
+
 });
 
 app.get("/events-create", function(req, res){

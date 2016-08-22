@@ -1,40 +1,38 @@
 
 <div>Find an Event</div>
+
+
+
 <nav class="level">
 
   <div class="level-item">
     <div class="columns">
       <div class="column is-3">
-
-
+        <% for(var i = 0; i < data.length; i++) { %>
         <div class="card">
-        <div class="card-content">
-          <div class="media">
-            <div class="media-content">
-              <p id = "name1" class="title is-5">
-
-              </p>
+          <div class="card-content">
+            <div class="media">
+              <div class="media-content">
+                <p class="title is-5"><%= data[i].name %></p>
+              </div>
+              <figure class="image is-128x128">
+                <img src="http://placehold.it/128x128">
+              </figure>
             </div>
-            <figure class="image is-128x128">
-              <img src="http://placehold.it/128x128">
-            </figure>
-          </div>
+
             <div class="content">
-              <p id="location1">
-
-              </p>
-              <p id="desc1">
-
-              </p>
+              <p>Event Location: <%= data[i].location %></p>
+              <p id="desc"><%= data[i].description %></p>
             </div>
             <a class="button is-medium">Join Event</a>
+
           </div>
         </div>
+        <% } %>
       </div>
     </div>
   </div>
-
-
+<!--
   <div class="level-item">
     <div class="columns">
       <div class="column is-3">
@@ -62,7 +60,7 @@
     </div>
   </div>
 
-    <!-- <div class="level-item">
+    <div class="level-item">
       <div class="columns">
         <div class="column is-3">
 
