@@ -68,9 +68,8 @@ app.get("/events-edit", function(req, res){
   res.render("events/editevent");
 });
 
-app.get("/event/:eventId", function(req, res){
-  var id = req.params.eventId;
-  res.render("events/viewevent", {id:id});
+app.get("/event-show", function(req, res){
+  res.render("events/viewevent");
 })
 
 app.put("/events-edit", function(req, res){

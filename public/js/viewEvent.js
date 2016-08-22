@@ -1,32 +1,53 @@
 
-
 $(document).ready(function () {
 
-//Edit Event
-$('#editform').on('submit',function(e){
-  console.log(localStorage.getItem('token'));
+var user_url = 'http://localhost:9000/api/events/';
 
-  console.log('hi');
-  e.preventDefault();
-    $.ajax({
-      url: server_url,
-      method: "PUT",
-      headers: {
-             "Authorization": "Bearer " + localStorage.getItem('token')
-           },
-      data: $("#editform").serialize(),
-      dataType: 'json',
-
-      // beforeSend: function() {
-      //   $loader.show();
-      // }
-    }).done(function successFunction(data) {
-       console.log('success signup');
-        window.location.replace("/events");
-      })
-      .fail(failFunction)
-      .always(alwaysFunction);
-    });
+localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3Yjk1NmEyNzA1OGYwNTExOGU1ODdlYyIsImVtYWlsIjoiam9uYXRoYW5AZ21haWwuY29tIiwiaWF0IjoxNDcxODQ2NzMyLCJleHAiOjE0NzE4NTc1MzJ9._x0UPjHICYKAhJCvHJCewPniF4Wvl2Z8VlYb5muFZus");
 
 
-});
+$.ajax({
+  url: user_url + localStorage.getItem('event_id'),
+  method: "GET",
+  headers: {
+         "Authorization": "Bearer " + localStorage.getItem('token')
+       },
+  dataType: 'json',
+
+  // beforeSend: function() {
+  //   $loader.show();
+  // }
+}).done(successFunction)
+  .fail(failFunction)
+  .always(alwaysFunction);
+
+
+function successFunction(data) {
+
+  console.log(data);
+  console.log(data.name);
+
+
+  for (i=0; i < data.length; i++){
+    var event_div = $('<div>')
+    event_div.append(data[i].name);
+    event_div.append('<li>' + data.events[i].description + '</li>');
+    event_div.append('<li>' + data[i].location + '</li>');
+    event_div.append('<hr />')
+    $(".event").append(event_div);
+  }
+}
+
+function failFunction(request, textStatus, errorThrown){
+  // $name.text('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
+  console.log('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
+}
+
+// always function
+function alwaysFunction() {
+  // hide the loader
+  // $loader.hide();
+  // $body.css('overflow', 'hidden');
+}
+
+})
