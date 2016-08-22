@@ -7,32 +7,45 @@ $(document).ready(function () {
   var $location2 = $("#location2");
   var $desc = $("#desc1");
   var $desc2 = $("#desc2");
+  var $username = $("#username");
+  var $password = $("#password");
+  var $loginBtn = $("#loginBtn");
 
   var server_url = 'http://localhost:9000/api/events';
+  var user_url = 'http://localhost:9000/api/users/';
+  var login_url = 'http://localhost:9000/api/login';
 
-
-//Show all Events
+$loginBtn.click(function(){
+  //Show all Events
   $.ajax({
-    url: server_url,
+    url: login_url,
     method: "GET",
-    headers: {
-           "Authorization": "Bearer " + localStorage.getItem('jwt_token')
-         },
-    dataType: 'json',
+    dataType: 'json'
+  }).done(loginSuccess)
+  .fail(failFunction)
+  .always(alwaysFunction);
 
-    // beforeSend: function() {
-    //   $loader.show();
-    // }
-  }).done(successFunction)
-    .fail(failFunction)
-    .always(alwaysFunction);
+  function loginSuccess(res) {
+    alert('success login');
+    console.log(res);
+
+    localStorage.setItem('token', res.token);
+    localStorage.setItem('user_id', res.id);
+  }
+
+})
+
+
+
+localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3YmE2YjU5MDE1NDAxZTU1ZDZmZDViZSIsImVtYWlsIjoiam9uQGdtYWlsLmNvbSIsImlhdCI6MTQ3MTgzNDk3NywiZXhwIjoxNDcxODQ1Nzc3fQ.MjkpZPAlKr71EE7qzkpjqwY1CT7ieAXdIXgB-5x3fkc");
+localStorage.setItem('user_id', "57ba6b59015401e55d6fd5be");
 
 //Create New Events
     $.ajax({
-      url: server_url,
-      method: "POST",
+      url: user_url + localStorage.getItem('user_id'),
+      method: "GET",
       headers: {
-             "Authorization": "Bearer " + localStorage.getItem('jwt_token')
+             "Authorization": "Bearer " + localStorage.getItem('token')
            },
       dataType: 'json',
 
@@ -45,6 +58,11 @@ $(document).ready(function () {
 
 
     function successFunction(data) {
+
+      console.log(data);
+      console.log(data.name);
+      $("#name").html(data.name);
+
       // var rendered = new EJS({url:'events/findanevent.ejs'}).render({data:data});
       // $(".title is-5").forEach(function(i, name){
       //   name.html(data[i].name);
@@ -60,6 +78,8 @@ $(document).ready(function () {
     // console.log(data[i].name);
     // var html = new EJS({url: 'findanevent.ejs'}).render(data);
 }
+
+
 
 
 
