@@ -1,65 +1,37 @@
 
 $(document).ready(function () {
 
-  var $name = $("#name1");
-  var $name2 = $("#name2");
-  var $location = $("#location1");
-  var $location2 = $("#location2");
-  var $desc = $("#desc1");
-  var $desc2 = $("#desc2");
-
   var server_url = 'http://localhost:9000/api/events';
 
+localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3Yjk1NmEyNzA1OGYwNTExOGU1ODdlYyIsImVtYWlsIjoiam9uYXRoYW5AZ21haWwuY29tIiwiaWF0IjoxNDcxODQ2NzMyLCJleHAiOjE0NzE4NTc1MzJ9._x0UPjHICYKAhJCvHJCewPniF4Wvl2Z8VlYb5muFZus");
 
-//Show all Events
-  $.ajax({
-    url: server_url,
-    method: "GET",
-    headers: {
-           "Authorization": "Bearer " + localStorage.getItem('jwt_token')
-         },
-    dataType: 'json',
 
-    // beforeSend: function() {
-    //   $loader.show();
-    // }
-  }).done(successFunction)
-    .fail(failFunction)
-    .always(alwaysFunction);
+//Create New Event
+$('#createform').on('submit',function(e){
+  console.log(localStorage.getItem('token'));
 
-//Create New Events
+  console.log('hi');
+  e.preventDefault();
     $.ajax({
       url: server_url,
       method: "POST",
       headers: {
-             "Authorization": "Bearer " + localStorage.getItem('jwt_token')
+             "Authorization": "Bearer " + localStorage.getItem('token')
            },
+      data: $("#createform").serialize(),
       dataType: 'json',
 
       // beforeSend: function() {
       //   $loader.show();
       // }
-    }).done(successFunction)
+    }).done(function successFunction(data) {
+       console.log('success signup');
+        window.location.replace("/events");
+      })
       .fail(failFunction)
       .always(alwaysFunction);
+    });
 
-
-    function successFunction(data) {
-      // var rendered = new EJS({url:'events/findanevent.ejs'}).render({data:data});
-      // $(".title is-5").forEach(function(i, name){
-      //   name.html(data[i].name);
-      // });
-
-      // $('.contact').html(renderedData);
-    // $.css('border', '1px solid #e8e8e8');
-    // if data exists
-    // for(var i = 0; i < data.length; i ++){
-    // $name.html(data[i].name);
-    // $location.html(data[i].location);
-    // $desc.html(data[i].description);
-    // console.log(data[i].name);
-    // var html = new EJS({url: 'findanevent.ejs'}).render(data);
-}
 
 
 

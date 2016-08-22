@@ -52,28 +52,30 @@ app.get("/events", function(req, res){
       res.render("events/findanevent", {data: data});
     }
   } );
-  // var data = [{
-  //   name: "testName",
-  //   location: "testLocation",
-  //   description: "testDesc"
-  // }]
-// res.render("events/findanevent", {data: data});
-
 });
 
 app.get("/events-create", function(req, res){
   res.render("events/createevent");
 });
 
-app.get("/events-edit", function(req, res){
-  res.render("events/createevent");
+app.post("/events-create", function(req, res){
+      res.redirect("/events");
 });
 
 
 
+app.get("/events-edit", function(req, res){
+  res.render("events/editevent");
+});
 
+app.get("/event/:eventId", function(req, res){
+  var id = req.params.eventId;
+  res.render("events/viewevent", {id:id});
+})
 
-
+app.put("/events-edit", function(req, res){
+      res.redirect("events/findanevent");
+});
 
 
 
