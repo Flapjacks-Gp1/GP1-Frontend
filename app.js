@@ -31,10 +31,10 @@ app.get("/signup", function(req, res){
   console.log(req.body);
 });
 
-app.post("/signup", function(req, res){
-  res.render('users/signup');
+app.post("/signup", function(req, res, next) {
   console.log(req.body);
-});
+  next();
+} );
 
 app.get("/profile", function(req, res){
   res.render("users/userprofile");
