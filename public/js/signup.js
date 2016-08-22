@@ -28,7 +28,7 @@ $(document).ready(function () {
       $notification.show();
       $notificationMessage.html("Success!");
       localStorage.setItem('token', data.token);
-      localStorage.setItem('id', data.id);
+      localStorage.setItem('user_id', data.id);
       console.log(data);
     }
 
@@ -57,7 +57,7 @@ $(document).ready(function () {
       $notification.show();
       $notificationMessage.html('Welcome ' + data.name);
       localStorage.setItem('token', data.token);
-      localStorage.setItem('id', data.id);
+      localStorage.setItem('user_id', data.id);
       console.log(data);
     }
 
