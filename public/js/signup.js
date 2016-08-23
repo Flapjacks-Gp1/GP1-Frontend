@@ -18,7 +18,7 @@ $(document).ready(function () {
       url: server_url + 'signup',
       method: "POST",
       dataType: 'json',
-      data: $signupForm.serialize(),
+      data: $signupForm.serialize()
     }).done(successFunction)
       .fail(failFunction)
       .always(alwaysFunction);

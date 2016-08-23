@@ -36,9 +36,15 @@ app.post("/signup", function(req, res){
 });
 
 app.get("/profile/:user_id", function(req, res){
-
-res.render("users/userprofile");
-
+  // console.log(req.params.id);
+  // var url = "http://localhost:9000/api/users/" + req.params.id;
+  // request(url, function(error, response, body){
+  //   if(!error && response.statusCode == 200){
+  //     var data = JSON.parse(body);
+  //     res.render("users/userprofile", {data: data});
+  //   }
+  // });
+  res.render("users/userprofile");
 });
 
 app.get("/useredit/:user_id", function(req, res){
@@ -52,18 +58,14 @@ app.get("/events", function(req, res){
       var data = JSON.parse(body);
       res.render("events/findanevent", {data: data});
     }
-  } );
+  });
 });
 
 app.get("/events-create", function(req, res){
   res.render("events/createevent");
 });
 
-app.post("/events-create", function(req, res){
-      res.redirect("/events");
-});
-
-app.get("/events-edit", function(req, res){
+app.get("/events-edit/:id", function(req, res){
   res.render("events/editevent");
 });
 

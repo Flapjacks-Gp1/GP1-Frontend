@@ -2,7 +2,8 @@ $(document).ready(function () {
     var client_url = 'http://localhost:7000/'
     var user_url = 'http://localhost:9000/api/users/';
     var $editProfile = $('#editProfile');
-$(".is-primary").click(function(e){
+
+$editProfile.submit(function(e){
 
   e.preventDefault();
 
@@ -13,10 +14,7 @@ $.ajax({
          "Authorization": "Bearer " + localStorage.getItem('token')
        },
   dataType: 'json',
-  data: {
-    name: $('#name').val(),
-    password: $('#password').val()
-  }
+  data: $editProfile.serialize()
   // beforeSend: function() {
   //   $loader.show();
   // }
