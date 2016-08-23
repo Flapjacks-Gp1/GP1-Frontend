@@ -6,15 +6,15 @@
 <form id="editEvent" method="POST">
   <input type="hidden" name="_method" value="PUT">
 <p class="control">
-  <input id = "eventname" class="input" type="text" placeholder="text input" name="name">
+  <input id = "eventname" class="input" type="text" name="name" value="<%= data.name %>">
 </p>
 <label class="label">Event Location</label>
 <p class="control has-icon has-icon-right">
-  <input id = "eventlocation" class="input is-success" type="text" placeholder="Text input"  name="location">
+  <input id = "eventlocation" class="input is-success" type="text" name="location" value="<%= data.location %>">
 </p>
 <label class="label">Description</label>
 <p class="control">
-  <textarea id= "description" class="textarea" placeholder="Please describe the event" name="description"></textarea>
+  <textarea id= "description" class="textarea" name="description"><%= data.description %></textarea>
 </p>
 <p class="control">
   <button class="button is-primary">Location</button>

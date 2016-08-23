@@ -67,8 +67,15 @@ app.get("/events-create", function(req, res){
 });
 
 app.get("/events-edit/:id", function(req, res){
-  res.render("events/editevent");
+  var url = "http://localhost:9000/api/events/" + req.params.id;
+ request(url, function(error, response, body){
+   if(!error && response.statusCode == 200){
+     var data = JSON.parse(body);
+     res.render("events/editevent", {data: data});
+   }
+ } );
 });
+
 
 app.get("/events/:id", function(req, res){
   var url = "http://localhost:9000/api/events/" + req.params.id;
