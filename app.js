@@ -76,12 +76,12 @@ app.get("/events-edit/:id", function(req, res){
  } );
 });
 
-
 app.get("/events/:id", function(req, res){
   var url = "http://localhost:9000/api/events/" + req.params.id;
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
+      console.log(data);
       res.render("events/viewevent", {data: data});
     }
   } );
