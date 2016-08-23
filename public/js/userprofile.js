@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var user_url = 'http://localhost:9000/api/users/';
+    var user_url = 'https://jio-app.herokuapp.com/api/users/';
 $.ajax({
   url: user_url + localStorage.getItem('user_id'),
   method: "GET",

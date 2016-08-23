@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var client_url = 'http://localhost:7000/'
-    var user_url = 'http://localhost:9000/api/users/';
+    var user_url = 'https://jio-app.herokuapp.com/api/users/';
     var $editProfile = $('#editProfile');
 
 $editProfile.submit(function(e){

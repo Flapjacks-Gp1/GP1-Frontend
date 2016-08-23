@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var client_url = 'http://localhost:7000/'
-    var event_url = 'http://localhost:9000/api/events/';
+    var event_url = 'https://jio-app.herokuapp.com/api/events/';
     var $editEvent = $('#editEvent');
     var eventPathname = window.location.pathname.split('/');
     console.log(eventPathname[2]);
@@ -23,7 +23,7 @@ $(document).ready(function () {
 
 
     function successFunction(data) {
-      location.href = client_url + 'events';
+      window.location.replace("/events/" + data._id);
     }
 
     function failFunction(request, textStatus, errorThrown){

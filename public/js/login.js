@@ -2,7 +2,7 @@
 $(document).ready(function () {
 
  var client_url = 'http://localhost:7000/';
-  var server_url = 'http://localhost:9000/api/login';
+  var server_url = 'https://jio-app.herokuapp.com/api/login';
 
   $('.is-primary').click(function(e) {
          e.preventDefault();

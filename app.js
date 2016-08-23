@@ -24,7 +24,7 @@ app.get("/login", function(req, res){
 });
 
 app.post("/login", function(req, res){
-  res.render("users/userprofile");
+  res.render("users/show");
 });
 
 app.get("/signup", function(req, res){
@@ -45,7 +45,7 @@ app.get("/profile/:user_id", function(req, res){
   //     res.render("users/userprofile", {data: data});
   //   }
   // });
-  res.render("users/userprofile");
+  res.render("users/show");
 });
 
 //Removed the user edit page as it was causing issues due to the lack of autopopulate
@@ -59,13 +59,13 @@ app.get("/events", function(req, res){
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
-      res.render("events/findanevent", {data: data});
+      res.render("events/index", {data: data});
     }
   });
 });
 
 app.get("/events-create", function(req, res){
-  res.render("events/createevent");
+  res.render("events/create");
 });
 
 app.get("/events-edit/:id", function(req, res){
@@ -73,7 +73,7 @@ app.get("/events-edit/:id", function(req, res){
  request(url, function(error, response, body){
    if(!error && response.statusCode == 200){
      var data = JSON.parse(body);
-     res.render("events/editevent", {data: data});
+     res.render("events/edit", {data: data});
    }
  } );
 });
@@ -84,7 +84,7 @@ app.get("/events/:id", function(req, res){
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
-      res.render("events/viewevent", {data: data});
+      res.render("events/show", {data: data});
     }
   } );
 

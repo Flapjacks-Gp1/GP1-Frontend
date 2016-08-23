@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
 
-var event_url = 'http://localhost:9000/api/events/';
+var event_url = 'https://jio-app.herokuapp.com/api/events/';
 
 localStorage.setItem('token', "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3Yjk1NmEyNzA1OGYwNTExOGU1ODdlYyIsImVtYWlsIjoiam9uYXRoYW5AZ21haWwuY29tIiwiaWF0IjoxNDcxODQ2NzMyLCJleHAiOjE0NzE4NTc1MzJ9._x0UPjHICYKAhJCvHJCewPniF4Wvl2Z8VlYb5muFZus");
 

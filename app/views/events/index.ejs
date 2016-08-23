@@ -1,13 +1,8 @@
-
-<div>Find an Event</div>
-
-
-<nav class="level">
-
-  <div class="level-item">
-    <div class="columns">
-      <div class="column is-3">
-        <% for(var i = 0; i < data.length; i++) { %>
+<section>
+  <div class="container">
+    <h1 class="title">Find an Event</h1>
+    <% for(var i = 0; i < data.length; i++) { %>
+      <div class="column is-3 is-pulled-left">
         <div class="card">
           <div class="card-content">
             <div class="media">
@@ -21,17 +16,13 @@
 
             <div class="content">
               <p>Event Location: <%= data[i].location %></p>
-              <p id="desc"><%= data[i].description %></p>
+              <p id="desc"><%= (data[i].description).substring(0, 30) %>...</p>
             </div>
             <a class="button is-primary is-medium" href="/events/<%= data[i]._id %>">View Event</a>
           </div>
         </div>
-        <% } %>
       </div>
-    </div>
+    <% } %>
   </div>
-
-
-  </nav>
-
+</section>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

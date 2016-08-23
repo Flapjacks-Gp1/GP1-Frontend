@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var server_url = 'http://localhost:9000/api/events';
+  var server_url = 'https://jio-app.herokuapp.com/api/events';
 
 var userId = function() {
   return localStorage.getItem('user_id');
