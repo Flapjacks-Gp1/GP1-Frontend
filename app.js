@@ -24,6 +24,7 @@ app.get("/login", function(req, res){
 });
 
 app.post("/login", function(req, res){
+  res.render("users/userprofile");
 });
 
 app.get("/signup", function(req, res){
