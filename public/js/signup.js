@@ -11,9 +11,22 @@ $(document).ready(function () {
         cache: true
       });
 
+  $signupForm.parsley();
+
+  $.listen('parsley:field:error', function(ParsleyField) {
+    ParsleyField.$element.addClass('is-danger');
+  });
+  $.listen('parsley:field:success', function(ParsleyField) {
+      ParsleyField.$element.removeClass('is-danger');
+  });
+
   //Signup Form
   $signupForm.submit(function(event) {
     event.preventDefault();
+    $(this).parsley().validate();
+    if ($(this).parsley().isValid()) {
+        console.log('valid');
+    }
     $.ajax({
       url: server_url + 'signup',
       method: "POST",

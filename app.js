@@ -47,9 +47,11 @@ app.get("/profile/:user_id", function(req, res){
   res.render("users/userprofile");
 });
 
-app.get("/useredit/:user_id", function(req, res){
-  res.render("users/editprofile");
-});
+//Removed the user edit page as it was causing issues due to the lack of autopopulate
+
+// app.get("/useredit/:user_id", function(req, res){
+//   res.render("users/editprofile");
+// });
 
 app.get("/events", function(req, res){
   var url = "http://localhost:9000/api/events";
