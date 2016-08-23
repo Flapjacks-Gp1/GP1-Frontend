@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    var client_url = 'http://localhost:7000/'
     var user_url = 'https://jio-app.herokuapp.com/api/users/';
     var $editProfile = $('#editProfile');
 
@@ -25,7 +24,7 @@ $.ajax({
 
 function successFunction(data) {
 
-  location.href = client_url + 'profile/' + localStorage.getItem("user_id");
+  window.location.replace("/profile/" + localStorage.getItem("user_id"));
 }
 
 function failFunction(request, textStatus, errorThrown){

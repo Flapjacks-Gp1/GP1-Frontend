@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    var client_url = 'http://localhost:7000/'
     var event_url = 'https://jio-app.herokuapp.com/api/events/';
     var $deleteEvent = $('#deleteEvent');
     var eventPathname = window.location.pathname.split('/');
