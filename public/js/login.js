@@ -1,10 +1,12 @@
 
 $(document).ready(function () {
 
+ var client_url = 'http://localhost:7000/';
+  var server_url = 'http://localhost:9000/api/login';
 
-  var server_url = 'http://localhost:9000/api';
-
-
+  $('.is-primary').click(function(e) {
+         e.preventDefault();
+  console.log("clicked on submit button")
 //Show all Events
   $.ajax({
     url: server_url,
@@ -23,6 +25,7 @@ $(document).ready(function () {
 
 //Create New Events
     $.ajax({
+
       url: server_url,
       method: "POST",
       headers: {
@@ -53,6 +56,8 @@ $(document).ready(function () {
     // $desc.html(data[i].description);
     // console.log(data[i].name);
     // var html = new EJS({url: 'findanevent.ejs'}).render(data);
+    location.href = client_url + 'profile/' + localStorage.getItem("user_id");
+
 }
 
 
@@ -70,5 +75,5 @@ $(document).ready(function () {
     // $loader.hide();
     // $body.css('overflow', 'hidden');
   }
-
+})
 });
