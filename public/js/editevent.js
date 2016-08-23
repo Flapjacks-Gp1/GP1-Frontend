@@ -5,13 +5,17 @@ $(document).ready(function () {
     var eventPathname = window.location.pathname.split('/');
     console.log(eventPathname[2]);
 
+    localStorage.setItem('token', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjU3YmJhM2FjYTNjZGEwMzk2ODA5MWUwNCIsImVtYWlsIjoic2FicmluYUBnbWFpbC5jb20iLCJpYXQiOjE0NzE5MTQ5MjksImV4cCI6MTQ3MTkyNTcyOX0.BYMCX-soL6SmXE43l3dIb9i_ZBxURd2IRR1pjdxbxyk');
+console.log('TOKEN ' + localStorage.getItem('token'));
+console.log('url' + event_url + eventPathname[2]);
+console.log($editEvent.serialize())
   $editEvent.submit(function(e){
 
     e.preventDefault();
 
     $.ajax({
       url: event_url + eventPathname[2],
-      method: "POST",
+      method: "PUT",
       headers: {
              "Authorization": "Bearer " + localStorage.getItem('token')
            },

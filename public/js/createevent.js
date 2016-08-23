@@ -28,6 +28,7 @@ $('#createform').on('submit',function(e){
     }).done(function successFunction(data, res) {
        console.log(res);
         window.location.replace("/events/" + data._id);
+
       })
       .fail(failFunction)
       .always(alwaysFunction);
