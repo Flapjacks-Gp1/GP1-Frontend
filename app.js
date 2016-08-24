@@ -36,7 +36,7 @@ app.get("/signup", function(req, res){
 
 app.get("/profile/:user_id", function(req, res){
   // console.log(req.params.id);
-  // var url = "https://jio-app.herokuapp.com/api/users/" + req.params.id;
+  // var url = "https://localhost:9000/api/users/" + req.params.id;
   // request(url, function(error, response, body){
   //   if(!error && response.statusCode == 200){
   //     var data = JSON.parse(body);
@@ -55,7 +55,7 @@ app.get("/profile/:user_id", function(req, res){
 // });
 
 app.get("/events", function(req, res){
-  var url = "https://jio-app.herokuapp.com/api/events";
+  var url = "https://localhost:9000/api/events";
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
@@ -71,7 +71,7 @@ app.get("/events-create", function(req, res){
 });
 
 app.get("/events-edit/:id", function(req, res){
-  var url = "https://jio-app.herokuapp.com/api/events/" + req.params.id;
+  var url = "https://localhost:9000/api/events/" + req.params.id;
  request(url, function(error, response, body){
    if(!error && response.statusCode == 200){
      var data = JSON.parse(body);
@@ -82,7 +82,7 @@ app.get("/events-edit/:id", function(req, res){
 
 
 app.get("/events/:id", function(req, res){
-  var url = "https://jio-app.herokuapp.com/api/events/" + req.params.id;
+  var url = "https://localhost:9000/api/events/" + req.params.id;
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);

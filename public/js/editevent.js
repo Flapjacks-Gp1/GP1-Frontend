@@ -15,7 +15,7 @@ $(document).ready(function () {
              "Authorization": "Bearer " + localStorage.getItem('token')
            },
       dataType: 'json',
-      data: $editEvent.serialize()
+      data: {event: $editEvent.serialize(), userID: localStorage.getItem('user_id')}
     }).done(successFunction)
       .fail(failFunction)
       .always(alwaysFunction);
@@ -32,6 +32,7 @@ $(document).ready(function () {
 
     // always function
     function alwaysFunction() {
+      console.log(data)
     }
   })
 })
