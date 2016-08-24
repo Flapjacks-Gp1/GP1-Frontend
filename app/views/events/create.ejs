@@ -1,8 +1,17 @@
 
 <h1>Create Event</h1>
+<figure class="image is-128x128" id="imgPreview">
+  <img src="http://placehold.it/256x256" alt="" />
+</figure>
+<form id="uploadPhoto" method="post">
+  <input type="file" name="file" id="imageUploader">
+  <input type="submit" class="button is-primary" name="submit" value="Upload Image" id="uploadSubmit">
+  <p id="status">Please select a file</p>
+</form>
 
-<label class="label">Event Name</label>
 <form id="createform" action="/events-create" method="POST">
+<input type="hidden" id="avatarUrl" name="image" value="http://placehold.it/256x256">
+<label class="label">Event Name</label>
 <p class="control">
   <input id = "eventname" class="input" type="text" placeholder="text input" name="name">
 </p>
