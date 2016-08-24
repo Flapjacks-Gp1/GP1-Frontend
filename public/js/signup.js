@@ -7,13 +7,12 @@ $(document).ready(function () {
   var $notificationMessage = $('#message span');
   var $imageUploader = $("#imageUploader");
   var $uploadSubmit = $("#uploadSubmit");
-  var imgurLink = "https://api.imgur.com/3/upload";
+  var uploadLink = 'https://api.imgur.com/3/image';
+  var clientId = 'aca6d2502f5bfd8';
 
   $.ajaxSetup({
         cache: true
       });
-
-
 
   //parsley form validators
   $signupForm.parsley();
@@ -28,17 +27,22 @@ $(document).ready(function () {
   //Signup button image upload trigger
   $uploadSubmit.on('click', function(e) {
     e.preventDefault();
+    //  var imgData = $imageUploader[0].files[0];
+     var imgData = new FormData();
+     imgData.append("image", $imageUploader[0].files[0]);
 
     console.log($imageUploader.val());
     $.ajax({
-      url: imgurLink,
-      method: "POST",
-      headers: {"Authorization" : "Client-ID aca6d2502f5bfd8"},
-      async: true,
-      crossDomain: true,
-      data: $imageUploader.val()
-    }).done(function(data) {
-        console.log(data);
+      url: uploadLink,
+      type: "POST",
+      headers: {
+        'Authorization': 'Client-ID '+ clientId
+      },
+      data: imgData,
+      contentType: false,
+      processData: false,
+    }).done(function(result) {
+        console.log(result);
       })
       .fail(function() {
 
