@@ -29,14 +29,14 @@ $(document).ready(function () {
   $uploadSubmit.on('click', function(e) {
     e.preventDefault();
 
-    console.log($imageUploader);
+    console.log($imageUploader.val());
     $.ajax({
       url: imgurLink,
-      type: "POST",
+      method: "POST",
       headers: {"Authorization" : "Client-ID aca6d2502f5bfd8"},
       async: true,
       crossDomain: true,
-      data: $imageUploader
+      data: $imageUploader.val()
     }).done(function(data) {
         console.log(data);
       })
