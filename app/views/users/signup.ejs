@@ -1,16 +1,16 @@
 <% include ../shared/messages %>
 
-<figure class="image is-128x128 is-square" id="imgPreview">
-
+<figure class="image is-128x128" id="imgPreview">
+  <img src="http://placehold.it/256x256" alt="" />
 </figure>
 <form id="uploadPhoto" method="post">
   <input type="file" name="file" id="imageUploader">
-  <input type="submit" class="button is-primary" name="submit" value="Submit" id="uploadSubmit">
+  <input type="submit" class="button is-primary" name="submit" value="Upload Image" id="uploadSubmit">
   <p id="status">Please select a file</p>
 </form>
 
 <form id="signup" method="post">
-<input type="hidden" id="avatar-url" name="avatar-url">
+<input type="hidden" id="avatarUrl" name="avatar" value="http://placehold.it/256x256">
 <label class="label">Name</label>
 <p class="control">
 <input class="input" type="text" placeholder="Name" name="name" data-parsley-required="true">

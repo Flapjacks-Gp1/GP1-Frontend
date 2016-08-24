@@ -10,6 +10,7 @@ $(document).ready(function () {
   var uploadLink = 'https://api.imgur.com/3/image';
   var clientId = 'aca6d2502f5bfd8';
   var $imgPreview = $('#imgPreview');
+  var $avatarUrl = $('#avatarUrl');
 
   $.ajaxSetup({
         cache: true
@@ -43,9 +44,12 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
     }).done(function(result) {
+        console.log(result.data);
         var imgId = result.data.id;
+        var imgLink = result.data.link;
         $imgPreview.css('display', 'block');
-        $imgPreview.append("<a href='http://imgur.com/"+imgId+"'><img src='http://i.imgur.com/"+imgId+".png'></a>")
+        $imgPreview.html("<img src='http://i.imgur.com/"+imgId+".png'>");
+        $avatarUrl.val(imgLink)
       })
       .fail(function() {
 

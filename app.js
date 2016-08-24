@@ -4,6 +4,7 @@ var ejs = require("ejs");
 var bodyParser  = require("body-parser");
 var expressLayouts = require("express-ejs-layouts");
 var request = require('request');
+var server_url = 'http://localhost:9000/api/';
 
 app.use(bodyParser.urlencoded({extended: true}));
 
@@ -55,7 +56,7 @@ app.get("/profile/:user_id", function(req, res){
 // });
 
 app.get("/events", function(req, res){
-  var url = "https://localhost:9000/api/events";
+  var url = server_url + "events";
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
@@ -71,7 +72,7 @@ app.get("/events-create", function(req, res){
 });
 
 app.get("/events-edit/:id", function(req, res){
-  var url = "https://localhost:9000/api/events/" + req.params.id;
+  var url = server_url + "events/" + req.params.id;
  request(url, function(error, response, body){
    if(!error && response.statusCode == 200){
      var data = JSON.parse(body);
@@ -82,7 +83,7 @@ app.get("/events-edit/:id", function(req, res){
 
 
 app.get("/events/:id", function(req, res){
-  var url = "https://localhost:9000/api/events/" + req.params.id;
+  var url = server_url + "events/" + req.params.id;
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
