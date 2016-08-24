@@ -42,7 +42,9 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
     }).done(function(result) {
-        console.log(result);
+      var id = result.data.id;
+      $('#imgPreview').css('display', 'block');
+        preview.append("<a href='http://imgur.com/"+id+"'><img src='http://i.imgur.com/"+id+".png'></a>")
       })
       .fail(function() {
 
