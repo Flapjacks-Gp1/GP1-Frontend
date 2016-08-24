@@ -8,7 +8,7 @@ var event_url = 'http://localhost:9000/api/events/';
 
 var $viewEventButton = $('.viewEventButton');
 
-
+//
 
 $viewEventButton.on("click", function(e){
   e.preventDefault();
