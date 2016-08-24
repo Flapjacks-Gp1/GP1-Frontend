@@ -5,6 +5,9 @@ $(document).ready(function () {
   var $body = $('body');
   var $notification = $('#message');
   var $notificationMessage = $('#message span');
+  var $login = $("#btnLogin");
+  var $signup = $('#btnSignup');
+  var $logout = $('#btnLogout');
 
   $.ajaxSetup({
         cache: true
@@ -41,6 +44,9 @@ $(document).ready(function () {
       $notificationMessage.html("Success!");
       localStorage.setItem('token', data.token);
       localStorage.setItem('user_id', data.id);
+      $login.hide();
+      $signup.hide();
+      $logout.show();
       console.log(data);
     }
 
@@ -70,6 +76,9 @@ $(document).ready(function () {
       $notificationMessage.html('Welcome ' + data.name);
       localStorage.setItem('token', data.token);
       localStorage.setItem('user_id', data.id);
+      $login.hide();
+      $signup.hide();
+      $logout.show();
       console.log(data);
     }
 

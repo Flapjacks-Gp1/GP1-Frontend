@@ -1,7 +1,9 @@
 $(document).ready(function() {
-  var $login = $("#loginNav");
-  var $signup = $('#signup');
-  var $logout = $('#logout');
+  var $login = $("#btnLogin");
+  var $signup = $('#btnSignup');
+  var $logout = $('#btnLogout');
+  var $notification = $('#message');
+  var $notificationMessage = $('#message span');
 
 
   var userId = function() {
@@ -24,20 +26,21 @@ $(document).ready(function() {
       method: "GET",
       headers: {
              "Authorization": "Bearer " + localStorage.getItem('token')
-           },
-      dataType: 'json',
+           }
     }).done(successFunction)
       .fail(failFunction);
 
     function successFunction(data) {
-      console.log("successfully logged out")
+      console.log("successfully logged out");
       console.log(data);
+      localStorage.clear();
+      $login.show();
+      $signup.show();
+      $logout.hide();
+      $notification.show();
+      $notificationMessage.html('You have been logged out');
       // localStorage.clear();
-      // $logout.hide();
-      // $notification.show();
-      // $notificationMessage.html('You have been logged out');
-      // localStorage.clear();
-      // window.location.replace("/login");
+      window.location.replace("/login");
     }
 
     function failFunction(request, textStatus, errorThrown){
