@@ -9,6 +9,7 @@ $(document).ready(function () {
   var $uploadSubmit = $("#uploadSubmit");
   var uploadLink = 'https://api.imgur.com/3/image';
   var clientId = 'aca6d2502f5bfd8';
+  var $imgPreview = $('#imgPreview');
 
   $.ajaxSetup({
         cache: true
@@ -42,9 +43,9 @@ $(document).ready(function () {
       contentType: false,
       processData: false,
     }).done(function(result) {
-      var id = result.data.id;
-      $('#imgPreview').css('display', 'block');
-        preview.append("<a href='http://imgur.com/"+id+"'><img src='http://i.imgur.com/"+id+".png'></a>")
+        var imgId = result.data.id;
+        $imgPreview.css('display', 'block');
+        $imgPreview.append("<a href='http://imgur.com/"+imgId+"'><img src='http://i.imgur.com/"+imgId+".png'></a>")
       })
       .fail(function() {
 
