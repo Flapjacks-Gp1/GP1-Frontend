@@ -5,7 +5,7 @@ $(document).ready(function () {
   var $body = $('body');
   var $notification = $('#message');
   var $notificationMessage = $('#message span');
-  var $imageUploader = $("#uploadPhoto");
+  var $imageUploader = $("#imageUploader");
   var $uploadSubmit = $("#uploadSubmit");
   var imgurLink = "https://api.imgur.com/3/upload";
 
@@ -32,7 +32,7 @@ $(document).ready(function () {
     console.log($imageUploader);
     $.ajax({
       url: imgurLink,
-      method: "POST",
+      type: "POST",
       headers: {"Authorization" : "Client-ID aca6d2502f5bfd8"},
       async: true,
       crossDomain: true,
