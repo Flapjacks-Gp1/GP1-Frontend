@@ -31,7 +31,7 @@ $(document).ready(function () {
       url: imgurLink,
       method: "POST",
       headers: {"Authorization" : "Client-ID aca6d2502f5bfd8"},
-      dataType: 'jsonp',
+      dataType: 'json',
       data: $imageUploader
     }).done(function(data) {
         console.log(data);
