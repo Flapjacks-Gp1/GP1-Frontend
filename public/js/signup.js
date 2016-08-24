@@ -1,6 +1,5 @@
 
 $(document).ready(function () {
-  var server_url = 'https://jio-app.herokuapp.com/api/';
   var $signupForm = $('#signup');
   var $loginForm = $('#login');
   var $body = $('body');
@@ -66,7 +65,7 @@ $(document).ready(function () {
       .always(alwaysFunction);
 
     function successFunction(data) {
-      $signupForm.hide();
+      $loginForm.hide();
       $notification.show();
       $notificationMessage.html('Welcome ' + data.name);
       localStorage.setItem('token', data.token);

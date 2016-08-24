@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var event_url = 'https://jio-app.herokuapp.com/api/events/';
+    var event_url = server_url + 'events/';
     var $editEvent = $('#editEvent');
     var eventPathname = window.location.pathname.split('/');
     console.log(eventPathname[2]);

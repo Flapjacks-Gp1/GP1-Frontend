@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var user_url = 'https://jio-app.herokuapp.com/api/users/';
+    var user_url = server_url + 'users/';
     var $editProfile = $('#editProfile');
 
 $editProfile.submit(function(e){

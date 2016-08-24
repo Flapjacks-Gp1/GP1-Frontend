@@ -1,7 +1,6 @@
 $(document).ready(function () {
-    var user_url = 'https://jio-app.herokuapp.com/api/users/';
 $.ajax({
-  url: user_url + localStorage.getItem('user_id'),
+  url: server_url + 'users/' + localStorage.getItem('user_id'),
   method: "GET",
   headers: {
          "Authorization": "Bearer " + localStorage.getItem('token')

@@ -1,5 +1,5 @@
 $(document).ready(function() {
-  var server_url = 'https://jio-app.herokuapp.com/api/events';
+  var event_url = server_url + 'events/';
 
 var userId = function() {
   return localStorage.getItem('user_id');
@@ -14,7 +14,7 @@ $('#createform').on('submit',function(e){
 
   e.preventDefault();
     $.ajax({
-      url: server_url,
+      url: event_url,
       method: "POST",
       headers: {
              "Authorization": "Bearer " + localStorage.getItem('token')
