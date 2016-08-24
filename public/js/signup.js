@@ -3,6 +3,8 @@ $(document).ready(function () {
   var $signupForm = $('#formSignup');
   var $loginForm = $('#login');
   var $body = $('body');
+  var $loginVisible = $('.is-logged-in');
+  var $logoutVisible = $('.is-logged-out');
   var $notification = $('#message');
   var $notificationMessage = $('#message span');
   var $btnLogin = $("#btnLogin");
@@ -52,7 +54,7 @@ $(document).ready(function () {
         var imgLink = result.data.link;
         $imgPreview.css('display', 'block');
         $imgPreview.html("<img src='http://i.imgur.com/"+imgId+".png'>");
-        $avatarUrl.val(imgLink)
+        $avatarUrl.val(imgLink);
       })
       .fail(function() {
 
@@ -84,10 +86,8 @@ $(document).ready(function () {
       $notificationMessage.html("Success!");
       localStorage.setItem('token', data.token);
       localStorage.setItem('user_id', data.id);
-      $btnLogin.hide();
-      $btnSignup.hide();
-      $btnLogout.show();
-      console.log(data);
+      $logoutVisible.hide();
+      $loginVisible.show();
     }
 
     function failFunction(request, textStatus, errorThrown){
@@ -116,9 +116,8 @@ $(document).ready(function () {
       $notificationMessage.html('Welcome ' + data.name);
       localStorage.setItem('token', data.token);
       localStorage.setItem('user_id', data.id);
-      $btnLogin.hide();
-      $btnSignup.hide();
-      $btnLogout.show();
+      $logoutVisible.hide();
+      $loginVisible.show();
       console.log(data);
     }
 

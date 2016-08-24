@@ -1,9 +1,9 @@
 $(document).ready(function() {
-  var $login = $("#btnLogin");
-  var $signup = $('#btnSignup');
-  var $logout = $('#btnLogout');
+  var $loginVisible = $('.is-logged-in');
+  var $logoutVisible = $('.is-logged-out');
   var $notification = $('#message');
   var $notificationMessage = $('#message span');
+  var $btnLogout = $('#btnLogout');
 
 
   var userId = function() {
@@ -13,13 +13,13 @@ $(document).ready(function() {
 
   $("#profileLink").attr("href", "/profile/" + localStorage.getItem('user_id'));
 
+  //If user is logged in, show logged in items
   if (localStorage.user_id) {
-    $login.hide();
-    $signup.hide();
-    $logout.show();
+    $logoutVisible.hide();
+    $loginVisible.show();
   };
 
-  $logout.click (function(event) {
+  $btnLogout.click (function(event) {
     event.preventDefault();
     $.ajax({
       url: "http://localhost:9000/api/logout",
@@ -34,9 +34,8 @@ $(document).ready(function() {
       console.log("successfully logged out");
       console.log(data);
       localStorage.clear();
-      $login.show();
-      $signup.show();
-      $logout.hide();
+      $logoutVisible.show();
+      $loginVisible.hide();
       $notification.show();
       $notificationMessage.html('You have been logged out');
       // localStorage.clear();

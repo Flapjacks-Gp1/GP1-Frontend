@@ -4,14 +4,14 @@
     <% for(var i = 0; i < data.length; i++) { %>
       <div class="column is-3 is-pulled-left">
         <div class="card">
+          <div class="card-image" id="eventImage">
+            <img src="<%= data[i].image %>">
+          </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
                 <p class="title is-5"><%= data[i].name %></p>
               </div>
-              <figure class="image is-128x128">
-                <img src="http://placehold.it/128x128">
-              </figure>
             </div>
 
             <div class="content">

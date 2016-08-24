@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  var $userAvatar = $('#userAvatar');
+
 $.ajax({
   url: server_url + 'users/' + localStorage.getItem('user_id'),
   method: "GET",
@@ -16,13 +18,14 @@ function successFunction(data) {
   console.log(data);
   console.log(data.name);
   $("#name").html(data.name);
+  $userAvatar.html("<img src=" + data.avatar +">");
 
-  for (i=0; i < data.events.length; i++){
+  for (i=0; i < data.events.length; i++) {
     var event_div = $('<div>')
     event_div.append(data.events[i].name);
     event_div.append('<li>' + data.events[i].description + '</li>');
     event_div.append('<li>' + data.events[i].location + '</li>');
-    event_div.append('<hr />')
+    event_div.append('<hr />');
     $(".event").append(event_div);
   }
 }

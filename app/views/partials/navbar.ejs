@@ -7,36 +7,36 @@
       </div>
 
       <span class="nav-toggle">
-        <span></span>
+      <span></span>
       <span></span>
       <span></span>
       </span>
 
       <div class="nav-right nav-menu">
-        <a class="nav-item" href="/events-create">
+        <a class="nav-item is-logged-in" href="/events-create" style="display: none">
           Add an Event
         </a>
         <a class="nav-item" href="/events">
           Events
         </a>
-        <a id="profileLink" class="nav-item" href="/profile/">
+        <a id="profileLink" class="nav-item is-logged-in" href="/profile/" style="display: none">
           Profile
         </a>
 
         <span class="nav-item">
-          <a class="button" href="/login" id="btnLogin">
+          <a class="button is-logged-out" href="/login" id="btnLogin">
             <span class="icon">
               <i class="fa fa-download"></i>
             </span>
         <span>Login</span>
         </a>
-        <a class="button is-primary" href="/signup" id="btnSignup">
+        <a class="button is-primary is-logged-out" href="/signup" id="btnSignup">
           <span class="icon">
               <i class="fa fa-download"></i>
             </span>
           <span>Sign up</span>
         </a>
-        <a class="button is-primary" id="btnLogout" style="display: none">
+        <a class="button is-primary is-logged-in" id="btnLogout" style="display: none">
           <span class="icon">
               <i class="fa fa-download"></i>
             </span>

@@ -5,23 +5,22 @@
       <div class="column is-half is-offset-one-quarter">
 
         <div class="card">
+          <div class="card-image" id="eventImage">
+            <img src="<%= data.image %>">
+          </div>
           <div class="card-content">
             <div class="media">
               <div class="media-content">
                 <h1 class="title is-3"><%= data.name %></h1>
+                <input id="eventCreator" type="hidden" name="user" value="<%= data.user %>">
               </div>
-              <figure class="image is-128x128">
-                <img src="http://placehold.it/128x128">
-              </figure>
             </div>
 
             <div class="content">
               <p>Event Location: <%= data.location %></p>
               <p>Event Description: <%= data.description %></p>
             </div>
-            <div class="level-item">
-              <a class="button is-primary" href="../events-edit/<%= data._id %>">Edit</a>
-              <button id="deleteEvent" class="button is-danger">Delete Event</button>
+            <div class="level-item" id="userButtons">
             </div>
           </div>
         </div>
