@@ -3772,7 +3772,6 @@ a.panel-block:hover {
         flex-grow: 1; }
 
 .section {
-  background-color: #fff;
   padding: 40px 20px; }
   @media screen and (min-width: 980px) {
     .section.is-medium {
@@ -3791,5 +3790,8 @@ a.panel-block:hover {
       border-bottom: 1px solid #d3d6db; }
       .footer a:not(.icon):hover, .footer a:visited:not(.icon):hover {
         border-bottom-color: #1fc8db; }
+
+input.button {
+  margin-top: 2rem; }
 
 /*# sourceMappingURL=bulma.css.map */

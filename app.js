@@ -79,6 +79,7 @@ app.get("/events/:id", function(req, res){
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
+      console.log(req.params.id);
       res.render("events/show", {data: data, title: data.name});
     }
   } );

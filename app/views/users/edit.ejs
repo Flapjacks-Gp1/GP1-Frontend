@@ -1,5 +1,12 @@
 <% include ../shared/messages %>
 
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+
+        <h1 class="title is-2">Edit Your Info</h1>
+
 <form method="post" id="editProfile">
     <input type="hidden" name="_method" value="put" />
   <label class="label">Name</label>
@@ -13,10 +20,15 @@
 </p>
 
 <p class="control">
-<input class="button is-primary" type="submit" name="submit" value="Submit">
-<button class="button is-link">Cancel</button>
+<input class="button is-primary is-fullwidth" type="submit" name="submit" value="Submit">
 </p>
 </form>
+
+</div>
+</div>
+</div>
+</section>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="/js/urlsrc.js" charset="utf-8"></script>
 <script type= "text/javascript" src="/js/editprofile.js"></script>

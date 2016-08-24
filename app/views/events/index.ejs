@@ -18,7 +18,7 @@
               <p>Event Location: <%= data[i].location %></p>
               <p id="desc"><%= (data[i].description).substring(0, 30) %>...</p>
             </div>
-            <a class="button is-primary is-medium" href="/events/<%= data[i]._id %>">View Event</a>
+            <a class="button is-primary is-medium viewEventButton" href="/events/<%= data[i]._id %>">View Event</a>
           </div>
         </div>
       </div>
@@ -27,3 +27,4 @@
 </section>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="/js/urlsrc.js" charset="utf-8"></script>
+  <script type= "text/javascript" src="/js/viewEvent.js"></script>
