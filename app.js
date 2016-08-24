@@ -55,7 +55,7 @@ app.get("/profile/:user_id", function(req, res){
 // });
 
 app.get("/events", function(req, res){
-  var url = "https://jio-app.herokuapp.com/api/events";
+  var url = "http://localhost:9000/api/events";
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
@@ -71,7 +71,7 @@ app.get("/events-create", function(req, res){
 });
 
 app.get("/events-edit/:id", function(req, res){
-  var url = "https://jio-app.herokuapp.com/api/events/" + req.params.id;
+  var url = "http://localhost:9000/api/events" + req.params.id;
  request(url, function(error, response, body){
    if(!error && response.statusCode == 200){
      var data = JSON.parse(body);
@@ -82,10 +82,11 @@ app.get("/events-edit/:id", function(req, res){
 
 
 app.get("/events/:id", function(req, res){
-  var url = "https://jio-app.herokuapp.com/api/events/" + req.params.id;
+  var url = "http://localhost:9000/api/events" + req.params.id;
   request(url, function(error, response, body){
     if(!error && response.statusCode == 200){
       var data = JSON.parse(body);
+      console.log(req.params.id);
       res.render("events/show", {data: data, title: data.name});
     }
   } );

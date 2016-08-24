@@ -1,4 +1,13 @@
 <% include ../shared/messages %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+
+        <h1 class="title is-2">Start Sharing Your Events!</h1>
+        <h2 class="subtitle">Sign up in seconds.</h2>
+
 <form id="signup" method="post">
   <label class="label">Name</label>
 <p class="control">
@@ -17,11 +26,16 @@
 <input class="input" type="password" placeholder="Confirm Password" data-parsley-equalto="#password" data-parsley-required="true">
 </p>
 <p class="control">
-<input type="submit" class="button is-primary" name="submit" value="Submit">
-<a href="/" class="button is-danger">Cancel</a>
+<input type="submit" class="button is-primary is-fullwidth" name="submit" value="Submit">
 </p>
 </form>
+
+</div>
+</div>
+</div>
+</section>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type= "text/javascript" src="js/parsley.js"></script>
-<script src="js/urlsrc.js" charset="utf-8"></script>
-<script type= "text/javascript" src="js/signup.js"></script>
+<script type= "text/javascript" src="/js/parsley.js"></script>
+<script src="/js/urlsrc.js" charset="utf-8"></script>
+<script type= "text/javascript" src="/js/signup.js"></script>

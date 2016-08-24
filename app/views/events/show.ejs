@@ -1,62 +1,40 @@
 
-  <div class="level-item">
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
 
-    <div class="level-item has-text-centered">
-      <div class="columns">
-        <div class="column is-6">
-          <div class="box">
-            <article class="media">
-              <div class="media-left">
-                <figure class="image is-64x64">
-                  <img src="http://placehold.it/128x128" alt="Image">
-                </figure>
-              </div>
+        <div class="card">
+          <div class="card-content">
+            <div class="media">
               <div class="media-content">
-                <div class="content">
-                  <p>
-                    <strong><%= data.name %></strong>
-                    <br>
-                  </p>
-                </div>
+                <h1 class="title is-3"><%= data.name %></h1>
               </div>
-            </article>
+              <figure class="image is-128x128">
+                <img src="http://placehold.it/128x128">
+              </figure>
+            </div>
+
+            <div class="content">
+              <p>Event Location: <%= data.location %></p>
+              <p>Event Description: <%= data.description %></p>
+            </div>
+            <div class="level-item">
+              <a class="button is-primary" href="../events-edit/<%= data._id %>">Edit</a>
+              <button id="deleteEvent" class="button is-danger">Delete Event</button>
+            </div>
           </div>
         </div>
+
       </div>
     </div>
   </div>
+</section>
 
 
-  <div class="level-item">
-    <div class="columns">
-      <div class="column is-4">
-        <div class="box">
-          <article class="media">
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <%= data.location %>
-                </p>
-                <p>
-                  <%= data.description %>
-                </p>
-                <div class="event"></div>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </div>
-  </div>
 
-
-  <div class="level-item">
-    <a class="button is-medium" href="../events-edit/<%= data._id %>">Edit</a>
-  </div>
-
-      <button id="deleteEvent" class="button is-primary">Delete Event</button>
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="js/urlsrc.js" charset="utf-8"></script>
+<script src="/js/urlsrc.js" charset="utf-8"></script>
 <script src="/js/delete-event.js" charset="utf-8"></script>

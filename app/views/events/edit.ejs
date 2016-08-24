@@ -1,7 +1,12 @@
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
 
-<h1>Edit Event</h1>
 
-<label class="label">Your Event Name</label>
+<h1 class="title is-2">Edit Event</h1>
+
+<label class="label">Event Name</label>
 
 <form id="editEvent" method="POST">
   <input type="hidden" name="_method" value="PUT">
@@ -17,11 +22,14 @@
   <textarea id= "description" class="textarea" name="description"><%= data.description %></textarea>
 </p>
 <p class="control">
-  <button class="button is-primary">Location</button>
-  <input type="submit" name="submit" value="Submit" class="button is-link">
+  <input type="submit" name="submit" value="Submit" class="button is-primary is-fullwidth">
 </p>
 </form>
 
+</div>
+</div>
+</div>
+</section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="js/urlsrc.js" charset="utf-8"></script>
