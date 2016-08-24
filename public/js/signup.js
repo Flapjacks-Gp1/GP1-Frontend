@@ -7,7 +7,7 @@ $(document).ready(function () {
   var $notificationMessage = $('#message span');
   var $imageUploader = $("#imageUploader");
   var $uploadSubmit = $("#uploadSubmit");
-  var imgurLink = "https://api.imgur.com/3/image";
+  var imgurLink = "https://crossorigin.me/https://api.imgur.com/3/image";
 
   $.ajaxSetup({
         cache: true
