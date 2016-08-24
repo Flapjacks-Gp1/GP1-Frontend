@@ -1,6 +1,6 @@
 
 $(document).ready(function () {
-  var $signupForm = $('#signup');
+  var $signupForm = $('#formSignup');
   var $loginForm = $('#login');
   var $body = $('body');
   var $notification = $('#message');

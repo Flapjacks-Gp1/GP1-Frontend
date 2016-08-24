@@ -1,5 +1,5 @@
 <% include ../shared/messages %>
-<form id="signup" method="post">
+<form id="formSignup" method="post">
   <label class="label">Name</label>
 <p class="control">
 <input class="input" type="text" placeholder="Name" name="name" data-parsley-required="true">
@@ -17,11 +17,11 @@
 <input class="input" type="password" placeholder="Confirm Password" data-parsley-equalto="#password" data-parsley-required="true">
 </p>
 <p class="control">
-<input type="submit" class="button is-primary" name="submit" value="Submit">
+<input  type="submit" class="button is-primary" name="submit" value="Submit">
 <a href="/" class="button is-danger">Cancel</a>
 </p>
 </form>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type= "text/javascript" src="js/parsley.js"></script>
-<script src="js/urlsrc.js" charset="utf-8"></script>
-<script type= "text/javascript" src="js/signup.js"></script>
+<script type= "text/javascript" src="/js/parsley.js"></script>
+<script src="/js/urlsrc.js" charset="utf-8"></script>
+<script type= "text/javascript" src="/js/signup.js"></script>

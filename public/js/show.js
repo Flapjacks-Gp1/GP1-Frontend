@@ -7,6 +7,8 @@ $(document).ready(function() {
   var $eventCreator = $("#eventCreator").text();
   var $userButtons = $("#userButtons");
   if (localStorage.user_id  === $eventCreator) {
-    $userButtons.show();
+    $userButtons.append(
+      "<a class="button is-medium" href="../events-edit/<%= data._id %>">Edit</a>" +
+      "<button id="deleteEvent" class="button is-primary" >Delete Event</button> ");
   }
 })
