@@ -5,13 +5,14 @@ $(document).ready(function () {
   var $body = $('body');
   var $notification = $('#message');
   var $notificationMessage = $('#message span');
-  var $imageUploader = $("#imageUploader");
+  var $imageUploader = $("#uploadPhoto");
   var $uploadSubmit = $("#uploadSubmit");
-  var imgurLink = "https://crossorigin.me/https://api.imgur.com/3/image";
+  var imgurLink = "https://api.imgur.com/3/upload";
 
   $.ajaxSetup({
         cache: true
       });
+
 
 
   //parsley form validators
@@ -27,11 +28,14 @@ $(document).ready(function () {
   //Signup button image upload trigger
   $uploadSubmit.on('click', function(e) {
     e.preventDefault();
+
+    console.log($imageUploader);
     $.ajax({
       url: imgurLink,
       method: "POST",
       headers: {"Authorization" : "Client-ID aca6d2502f5bfd8"},
-      dataType: 'json',
+      async: true,
+      crossDomain: true,
       data: $imageUploader
     }).done(function(data) {
         console.log(data);
