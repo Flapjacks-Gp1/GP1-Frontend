@@ -22,7 +22,7 @@ $(document).ready(function() {
   $btnLogout.click (function(event) {
     event.preventDefault();
     $.ajax({
-      url: "http://localhost:9000/api/logout",
+      url: server_url + 'logout',
       method: "GET",
       headers: {
              "Authorization": "Bearer " + localStorage.getItem('token')
