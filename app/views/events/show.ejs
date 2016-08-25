@@ -20,7 +20,9 @@
               <p>Event Location: <%= data.location %></p>
               <p>Event Description: <%= data.description %></p>
             </div>
-            <div class="level-item" id="userButtons">
+            <div id="userButtons" class="level-item" style="display: none">
+              <a class="button is-primary" href="../events-edit/<%= data._id %>">Edit</a>
+              <button id="deleteEvent" class="button is-danger" >Delete</button>
             </div>
           </div>
         </div>
@@ -29,10 +31,7 @@
     </div>
   </div>
 </section>
-  <div id="userButtons" class="level-item">
-    <!-- <a class="button is-medium" href="../events-edit/<%= data._id %>">Edit</a>
-    <button id="deleteEvent" class="button is-primary" >Delete Event</button> -->
-  </div>
+
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

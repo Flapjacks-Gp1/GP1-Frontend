@@ -4,8 +4,8 @@ var ejs = require("ejs");
 var bodyParser  = require("body-parser");
 var expressLayouts = require("express-ejs-layouts");
 var request = require('request');
-// var server_url = 'http://localhost:9000/api/';
-var server_url = 'https://jio-app.herokuapp.com/api/';
+var server_url = 'http://localhost:9000/api/';
+// var server_url = 'https://jio-app.herokuapp.com/api/';
 
 app.use(bodyParser.urlencoded({extended: true}));
 
