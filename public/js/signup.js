@@ -1,7 +1,6 @@
-
 $(document).ready(function () {
   var $signupForm = $('#formSignup');
-  var $loginForm = $('#login');
+  var $loginForm = $('#formLogin');
   var $body = $('body');
   var $loginVisible = $('.is-logged-in');
   var $logoutVisible = $('.is-logged-out');
