@@ -15,6 +15,7 @@ $(document).ready(function () {
   var clientId = 'aca6d2502f5bfd8';
   var $imgPreview = $('#imgPreview');
   var $avatarUrl = $('#avatarUrl');
+  var $formContainer = $('.form-container');
 
   $.ajaxSetup({
         cache: true
@@ -80,7 +81,7 @@ $(document).ready(function () {
       .always(alwaysFunction);
 
     function successFunction(data) {
-      $signupForm.hide();
+      $formContainer.hide();
       $notification.show();
       $notificationMessage.html("Success!");
       localStorage.setItem('token', data.token);
