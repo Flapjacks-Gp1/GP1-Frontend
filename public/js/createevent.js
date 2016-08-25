@@ -6,6 +6,15 @@ $(document).ready(function() {
   var clientId = 'aca6d2502f5bfd8';
   var $imgPreview = $('#imgPreview');
   var $avatarUrl = $('#avatarUrl');
+  var $getPosition = $('#btnPosition');
+  var $eventlocation = $('#eventlocation');
+  var $latCoordinates = $('#latCoordinates');
+  var $longCoordinates = $('#longCoordinates');
+  var gmapsEndpoint = 'http://maps.googleapis.com/maps/api/geocode/json';
+  var gmapsKey = 'AIzaSyBkwLBYSSOLRgLThJtRBS47Sw6OL1eOA3s';
+
+
+// https://maps.googleapis.com/maps/api/geocode/json?latlng=40.714224,-73.961452&key=YOUR_API_KEY
 
 var userId = function() {
   return localStorage.getItem('user_id');
@@ -13,6 +22,37 @@ var userId = function() {
 console.log(userId());
 
 $("#eventCreator").attr("value", localStorage.getItem('user_id'));
+
+//Geolocation trigger
+$getPosition.on('click', function() {
+    $.geolocation.get({win: updatePosition, fail: noLocation});
+});
+
+function updatePosition(position) {
+  $latCoordinates.val(position.coords.latitude);
+  $longCoordinates.val(position.coords.longitude);
+  console.log(position);
+  // $eventlocation.val("Your position is " + position.coords.latitude + ", " + position.coords.longitude);
+  $.ajax({
+    url: gmapsEndpoint,
+    method: "GET",
+    dataType: 'json',
+    key: gmapsKey,
+    data: {'latlng' : position.coords.latitude + ", " + position.coords.longitude }
+  }).done(function(result) {
+    var locResult = result.results[0].formatted_address;
+    console.log(result.results[0].formatted_address);
+    $eventlocation.val(locResult);
+  }).fail(function(){
+
+  }).always(function() {
+
+  });
+};
+
+function noLocation(error) {
+    alert("No location info available. Error code: " + error.code);
+};
 
 //Image upload trigger
 $uploadSubmit.on('click', function(e) {

@@ -12,7 +12,6 @@
 <form id="uploadPhoto" method="post">
   <input type="file" name="file" id="imageUploader">
   <input type="submit" class="button is-primary" name="submit" value="Upload Image" id="uploadSubmit">
-  <p id="status">Please select a file</p>
 </form>
 
 <form id="createform" action="/events-create" method="POST">
@@ -22,9 +21,14 @@
   <input id = "eventname" class="input" type="text" placeholder="What is the name of your event?" name="name">
 </p>
 <label class="label">Event Location</label>
-<p class="control has-icon has-icon-right">
-  <input id = "eventlocation" class="input" type="text" placeholder="Where is your event?"  name="location">
+<p class="control has-addons">
+  <input id="eventlocation" class="input is-expanded" type="text" placeholder="Where is your event?"  name="location">
+  <a class="button is-info" id="btnPosition">
+    <i class="fa fa-map-marker" aria-hidden="true"></i>
+  </a>
 </p>
+<input type="hidden" id="latCoordinates" name="coordinates">
+<input type="hidden" id="longCoordinates" name="coordinates">
 <label class="label">Description</label>
 <p class="control">
   <textarea id= "description" class="textarea" placeholder="Please describe the event." name="description"></textarea>
@@ -40,5 +44,6 @@
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="/js/jquery.geolocation.min.js" charset="utf-8"></script>
 <script src="/js/urlsrc.js" charset="utf-8"></script>
 <script src="/js/createevent.js" charset="utf-8"></script>
