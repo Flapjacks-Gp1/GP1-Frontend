@@ -23,6 +23,7 @@ $(document).ready(function () {
 
   //parsley form validators
   $signupForm.parsley();
+  $loginForm.parsley();
   //parsley form validators: adding class to the input on error
   $.listen('parsley:field:error', function(ParsleyField) {
     ParsleyField.$element.addClass('is-danger');

@@ -19,6 +19,9 @@ $(document).ready(function() {
 var userId = function() {
   return localStorage.getItem('user_id');
 };
+
+$('#createForm').parsley();
+
 console.log(userId());
 
 $("#eventCreator").attr("value", localStorage.getItem('user_id'));
@@ -88,7 +91,7 @@ $uploadSubmit.on('click', function(e) {
 });
 
 //Create New Event
-$('#createform').on('submit',function(e){
+$('#createForm').on('submit',function(e){
   console.log(localStorage.getItem('token'));
 
   e.preventDefault();
@@ -98,7 +101,7 @@ $('#createform').on('submit',function(e){
       headers: {
              "Authorization": "Bearer " + localStorage.getItem('token')
            },
-      data: $("#createform").serialize(),
+      data: $("#createForm").serialize(),
       dataType: 'json',
 
       // beforeSend: function() {
