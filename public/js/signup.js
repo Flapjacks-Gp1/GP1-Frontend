@@ -101,6 +101,10 @@ $(document).ready(function () {
 
   //Login form
   $loginForm.submit(function(event) {
+    $(this).parsley().validate();
+    if ($(this).parsley().isValid()) {
+        console.log('valid');
+    }
     event.preventDefault();
     $.ajax({
       url: server_url + 'login',

@@ -92,6 +92,10 @@ $uploadSubmit.on('click', function(e) {
 
 //Create New Event
 $('#createForm').on('submit',function(e){
+  $(this).parsley().validate();
+  if ($(this).parsley().isValid()) {
+      console.log('valid');
+  }
   console.log(localStorage.getItem('token'));
 
   e.preventDefault();
