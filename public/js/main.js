@@ -6,12 +6,12 @@ $(document).ready(function() {
   var $btnLogout = $('#btnLogout');
 
   var $toggle = $('.nav-toggle');
-    var $menu = $('.nav-menu');
+  var $menu = $('.nav-menu');
 
-    $toggle.click(function() {
-      $(this).toggleClass('is-active');
-      $menu.toggleClass('is-active');
-    });
+  $toggle.click(function() {
+    $(this).toggleClass('is-active');
+    $menu.toggleClass('is-active');
+  });
 
   var userId = function() {
     return localStorage.getItem('user_id');
