@@ -10,7 +10,7 @@ $(document).ready(function() {
   var $eventlocation = $('#eventlocation');
   var $latCoordinates = $('#latCoordinates');
   var $longCoordinates = $('#longCoordinates');
-  var gmapsEndpoint = 'http://maps.googleapis.com/maps/api/geocode/json';
+  var gmapsEndpoint = 'https://maps.googleapis.com/maps/api/geocode/json';
   var gmapsKey = 'AIzaSyBkwLBYSSOLRgLThJtRBS47Sw6OL1eOA3s';
 
 
