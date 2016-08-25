@@ -21,19 +21,19 @@
 <input type="hidden" id="avatarUrl" name="avatar" value="http://placehold.it/256x256">
 <label class="label">Name</label>
 <p class="control">
-<input class="input" type="text" placeholder="Name" name="name" data-parsley-required="true">
+<input class="input" type="text" placeholder="Name" name="name" data-parsley-required="true" data-parsley-maxlength="21">
 </p>
 <label class="label">Email</label>
 <p class="control has-icon has-icon-right">
-<input class="input" type="email" placeholder="Email" name="email" data-parsley-required="true">
+<input class="input" type="email" placeholder="Email" name="email" data-parsley-required="true" data-parsley-maxlength="21">
 </p>
 <label class="label">Password</label>
 <p class="control has-icon has-icon-right">
-<input id="password" class="input" type="password" placeholder="Password" name="password" data-parsley-required="true">
+<input id="password" class="input" type="password" placeholder="Password" name="password" data-parsley-required="true" data-parsley-length="[6, 20]">
 </p>
 <label class="label">Confirm Password</label>
 <p class="control has-icon has-icon-right">
-<input class="input" type="password" placeholder="Confirm Password" data-parsley-equalto="#password" data-parsley-required="true">
+<input class="input" type="password" placeholder="Confirm Password" data-parsley-equalto="#password" data-parsley-required="true" data-parsley-length="[6, 20]">
 </p>
 <p class="control">
 <input type="submit" class="button is-primary is-fullwidth" name="submit" value="Submit">

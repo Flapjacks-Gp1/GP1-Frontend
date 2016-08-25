@@ -10,11 +10,11 @@
 <form id="formLogin" method="post">
   <label class="label">Email</label>
   <p class="control has-icon has-icon-right">
-    <input class="input is-success" type="text" placeholder="Email" name="email">
+    <input class="input" type="text" placeholder="Email" name="email" data-parsley-maxlength="21">
   </p>
   <label class="label">Password</label>
   <p class="control has-icon has-icon-right">
-    <input class="input is-danger" type="password" placeholder="Password" name="password">
+    <input class="input" type="password" placeholder="Password" name="password" data-parsley-length="[6, 20]">
   </p>
   <p class="control">
     <input type="submit" class="button is-primary is-fullwidth" name="submit" value="Submit">

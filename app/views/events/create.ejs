@@ -18,7 +18,7 @@
 <input type="hidden" id="avatarUrl" name="image" value="http://placehold.it/256x256">
 <label class="label">Event Name</label>
 <p class="control">
-  <input id = "eventname" class="input" type="text" placeholder="What is the name of your event?" name="name">
+  <input id = "eventname" class="input" type="text" placeholder="What is the name of your event?" name="name" data-parsley-required="true" data-parsley-maxlength="21">
 </p>
 <label class="label">Event Location</label>
 <p class="control has-addons">
@@ -31,7 +31,7 @@
 <input type="hidden" id="longCoordinates" name="coordinates">
 <label class="label">Description</label>
 <p class="control">
-  <textarea id= "description" class="textarea" placeholder="Please describe the event." name="description"></textarea>
+  <textarea id= "description" class="textarea" placeholder="Please describe the event." name="description" data-parsley-required="true" data-parsley-maxlength="140"></textarea>
 </p>
 <input id="eventCreator" type="hidden" name="user">
 <p class="control">
@@ -45,5 +45,6 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script src="/js/jquery.geolocation.min.js" charset="utf-8"></script>
+<script type= "text/javascript" src="/js/parsley.js"></script>
 <script src="/js/urlsrc.js" charset="utf-8"></script>
 <script src="/js/createevent.js" charset="utf-8"></script>
