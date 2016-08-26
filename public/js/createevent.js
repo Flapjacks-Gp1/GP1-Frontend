@@ -2,6 +2,7 @@ $(document).ready(function() {
   var event_url = server_url + 'events/';
   var $imageUploader = $("#imageUploader");
   var $uploadSubmit = $("#uploadSubmit");
+  var $eventFormContainer = $("#eventFormContainer");
   var uploadLink = 'https://api.imgur.com/3/image';
   var clientId = 'aca6d2502f5bfd8';
   var $imgPreview = $('#imgPreview');
@@ -82,7 +83,7 @@ $uploadSubmit.on('click', function(e) {
       $imgPreview.html("<img src='http://i.imgur.com/"+imgId+".png'>");
       $avatarUrl.val(imgLink)
     })
-    .fail(function() {
+    .fail(function(request, textStatus, errorThrown) {
 
     })
     .always(function() {
@@ -107,11 +108,12 @@ $('#createForm').on('submit',function(e){
            },
       data: $("#createForm").serialize(),
       dataType: 'json',
-
-      // beforeSend: function() {
-      //   $loader.show();
-      // }
+      beforeSend: function() {
+          $eventFormContainer.hide();
+          $loader.show();
+        }
     }).done(function successFunction(data, res) {
+        $loader.hide();
        console.log(res);
         window.location.replace("/events/" + data._id);
       })
@@ -126,6 +128,8 @@ $('#createForm').on('submit',function(e){
 
   function failFunction(request, textStatus, errorThrown){
     // $name.text('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
+    $eventFormContainer.show();
+    $loader.hide();
     console.log('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
   }
 

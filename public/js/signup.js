@@ -121,6 +121,7 @@ $(document).ready(function () {
       .always(alwaysFunction);
 
     function successFunction(data) {
+
       $loader.hide();
       $notification.show();
       $notification.addClass('is-success');
@@ -129,6 +130,10 @@ $(document).ready(function () {
       localStorage.setItem('user_id', data.id);
       $logoutVisible.hide();
       $loginVisible.show();
+
+      window.setTimeout(function() {
+          window.location.replace("/events");
+      }, 1000);
       console.log(data);
     }
 
