@@ -1,4 +1,14 @@
 input.button {
   margin-top: 2rem; }
 
+#loader {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  margin-top: 50px;
+  margin-left: -50px;
+  width: 100px;
+  height: 100px;
+  display: none; }
+
 /*# sourceMappingURL=custom.css.map */

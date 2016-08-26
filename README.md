@@ -11,6 +11,14 @@ Write a description of the event you’re in and post it to all your friends or 
 
 Create private events such as gatherings, movies, etc and invite your friends.
 
+Approach:
+
+The 2 models of Users and Events and their attributes were first determined. As a user is able to create many events and it will be shown in the user profile page, it was decided that the user model will reference events.
+
+After this, the wireframes for the application’s pages was created showing the buttons and input fields. This provided the layout of the pages and the flow of the application as the user uses it.
+
+With the backend and frontend decisions made, we then proceeded to use the frameworks and database learnt in class to create the application while incorporating external APIs and other libraries to create the functionality we needed.
+
 User Story:
 
 User signs up to create account > user logs in >
@@ -28,7 +36,7 @@ Wireframes: GP1-Frontend-Wireframes.pdf
 
 Features that can be added in future:
 
-To add a follower function where - 
+To add a follower function where -
 Event creator user can share event with followers
 Invite friends or share to all
 User gets invite notification > user sees shared event > user responds with going or not going > Event creator will be notified

@@ -16,6 +16,7 @@ $(document).ready(function () {
   var $imgPreview = $('#imgPreview');
   var $avatarUrl = $('#avatarUrl');
   var $formContainer = $('.form-container');
+  var $loader = $(".loader");
 
   $.ajaxSetup({
         cache: true
@@ -111,13 +112,18 @@ $(document).ready(function () {
       method: "POST",
       dataType: 'json',
       data: $loginForm.serialize(),
+      beforeSend: function() {
+          $loginForm.hide();
+          $loader.show();
+        }
     }).done(successFunction)
       .fail(failFunction)
       .always(alwaysFunction);
 
     function successFunction(data) {
-      $loginForm.hide();
+      $loader.hide();
       $notification.show();
+      $notification.addClass('is-success');
       $notificationMessage.html('Welcome ' + data.name);
       localStorage.setItem('token', data.token);
       localStorage.setItem('user_id', data.id);
@@ -127,6 +133,12 @@ $(document).ready(function () {
     }
 
     function failFunction(request, textStatus, errorThrown){
+      $loader.hide();
+      $notification.show();
+      $notification.addClass('is-danger');
+      $notificationMessage.html('Oops, are you sure you got your login details right?');
+      $loginForm.addClass('wobble');
+      $loginForm.show();
       console.log('An error occurred during your request: ' +  request.status + ' ' + textStatus + ' ' + errorThrown);
     }
 
